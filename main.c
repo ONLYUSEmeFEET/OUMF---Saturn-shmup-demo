@@ -33,6 +33,7 @@ static t_ship       ship;
 static int          first_ship_sprite_id;
 static int          blast_sprite_id;
 static int          enemy_sprite_id;
+//static int        enemy2_sprite_id; SOON
 static int          shield_sprite_id;
 static jo_list      laser_blast_list;
 static jo_list      enemies_list;
@@ -75,6 +76,10 @@ static inline bool         check_if_laser_hit_enemy(jo_node *enemy, void *extra)
         return false;
     jo_list_remove(&enemies_list, enemy);
     ++ship.score;
+    if (ship.score > ship.hiScore)
+    {
+        ++ship.hiScore; //begin incrementing the new HiScore
+    }
     return true;
 }
 
@@ -106,21 +111,24 @@ static inline void         draw_enemy(jo_node *node)
         jo_list_remove(&enemies_list, node);
 }
 
-static inline void         move_background(void)
+/* static inline void         move_background(void)
 {
     static int      background_vertical_scrolling = 0;
 
     jo_move_background(ship.x, background_vertical_scrolling);
     --background_vertical_scrolling;
 }
+*/
 
 void                my_draw(void)
 {
     if (!gameover && enemies_list.count <= 0)
         next_level();
 
-    jo_printf(1, 1, "Level: %d  ", level);
-    jo_printf(28, 1, "Score: %d  ", ship.score);
+    jo_printf(1, 28, "OUMF Simulation Level: %d  ", level);
+    jo_printf(1, 1, "Score: %d  ", ship.score);
+    jo_printf(28, 1, "HiScore: %d  ", ship.hiScore); //HiScore support :)
+
 #ifdef JO_DEBUG
     jo_printf(1, 2, jo_get_last_error());
 #endif
@@ -131,19 +139,26 @@ void                my_draw(void)
             jo_sprite_draw3D(shield_sprite_id, ship.x + ship.shield_pos.x, ship.y + ship.shield_pos.y, 520);
     }
     else
+
     {
-        jo_printf(15, 14, "Game over !");
-        jo_printf(9, 16, "Press Start to restart");
+        jo_printf(8, 14, "Game over YEEEAAAHHHH!");
+        jo_printf(8, 16, "Press Start to restart.");
+        if (ship.score == ship.hiScore)
+        {
+            jo_printf(8, 18, "NEW HISCORE!"); //Congrats champ!
+        }
     }
+
+
     jo_list_foreach(&laser_blast_list, draw_laser_blast);
     jo_list_foreach(&enemies_list, draw_enemy);
-    move_background();
+  //  move_background();    Initial implementation makes me queezy so this stays disabled for now.
 }
 
-static inline void         start_ship_animation(t_ship_horiz_move move, char is_moving_horizontaly, char reverse_animation)
+static inline void         start_ship_animation(t_ship_horiz_move move, char is_moving_horizontally, char reverse_animation)
 {
     jo_restart_sprite_anim(ship.anim_id);
-    ship.is_moving_horizontaly = is_moving_horizontaly;
+    ship.is_moving_horizontally = is_moving_horizontally;
     ship.reverse_animation = reverse_animation;
     ship.move = move;
 }
@@ -178,23 +193,27 @@ void			my_gamepad(void)
         return ;
     if (jo_is_pad1_key_down(JO_KEY_A))
         shoot();
-	if (jo_is_pad1_key_pressed(JO_KEY_LEFT) && ship.x > -(JO_TV_WIDTH_2 - 16))
+    if (jo_is_pad1_key_down(JO_KEY_B)) //More fire buttons more DESTRUCTION
+        shoot();
+    if (jo_is_pad1_key_down(JO_KEY_C)) //More fire buttons more DESTRUCTION
+        shoot();
+    if (jo_is_pad1_key_pressed(JO_KEY_LEFT) && ship.x > -(JO_TV_WIDTH_2 - 16))
     {
         /* If the ship doesn't move or on the opposite side */
-        if ((!ship.is_moving_horizontaly && jo_is_sprite_anim_stopped(ship.anim_id)) || (ship.is_moving_horizontaly && ship.move == SHIP_MOVE_RIGHT))
+        if ((!ship.is_moving_horizontally && jo_is_sprite_anim_stopped(ship.anim_id)) || (ship.is_moving_horizontally && ship.move == SHIP_MOVE_RIGHT))
             start_ship_animation(SHIP_MOVE_LEFT, 1, 0);
         ship.x -= ship.speed;
     }
 	else if (jo_is_pad1_key_pressed(JO_KEY_RIGHT) && ship.x < (JO_TV_WIDTH_2 - 16))
     {
-        if ((!ship.is_moving_horizontaly && jo_is_sprite_anim_stopped(ship.anim_id)) || (ship.is_moving_horizontaly && ship.move == SHIP_MOVE_LEFT))
+        if ((!ship.is_moving_horizontally && jo_is_sprite_anim_stopped(ship.anim_id)) || (ship.is_moving_horizontally && ship.move == SHIP_MOVE_LEFT))
             start_ship_animation(SHIP_MOVE_RIGHT, 1, 0);
         ship.x += ship.speed;
     }
     else
     {
         /* We restore the initial state (the trackbed) of the ship */
-        if ((ship.is_moving_horizontaly && jo_is_sprite_anim_stopped(ship.anim_id)))
+        if ((ship.is_moving_horizontally && jo_is_sprite_anim_stopped(ship.anim_id)))
             start_ship_animation(ship.move, 0, 1);
     }
 	if (jo_is_pad1_key_pressed(JO_KEY_UP) && ship.y > -JO_TV_HEIGHT_2)
@@ -217,10 +236,11 @@ void            init_game(void)
 
   	first_ship_sprite_id = jo_sprite_add_tga_tileset(JO_ROOT_DIR, "SHIP.TGA", JO_COLOR_Blue, ship_tileset, SHIP_TILE_COUNT);
     enemy_sprite_id = jo_sprite_add_tga(JO_ROOT_DIR, "EN.TGA", JO_COLOR_Blue);
+//  enemy2_sprite_id = jo_sprite_add_tga(JO_ROOT_DIR, "EN.TGA", JO_COLOR_Blue); SOON
     blast_sprite_id = jo_sprite_add_tga(JO_ROOT_DIR, "BLAST.TGA", JO_COLOR_Blue);
     shield_sprite_id = jo_sprite_add_tga(JO_ROOT_DIR, "SHIELD.TGA", JO_COLOR_Blue);
     ship.anim_id = jo_create_sprite_anim(first_ship_sprite_id, SHIP_TILE_COUNT, 3);
-    ship.speed = 3;
+    ship.speed = 4;
     ship.score = 0;
     ship.shield_pos.x = 0;
     ship.shield_pos.y = 0;

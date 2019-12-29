@@ -17,10 +17,11 @@ typedef struct
     int                 y;
     int                 speed;
     t_ship_horiz_move   move;
-    char                is_moving_horizontaly;
+    char                is_moving_horizontally;
     char                reverse_animation;
     jo_pos2D            shield_pos;
     int                 score;
+    int                 hiScore;
 }                       t_ship;
 
 #endif /* !__SHIP_H__ */
