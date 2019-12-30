@@ -40,6 +40,22 @@ static jo_list      enemies_list;
 static int          level = 0;
 static int          gameover = 0;
 static char         having_shield = 1;
+static int          water_sprite_id = 0;
+
+void draw_water(int sprite_id, int sprite_height, int speed)
+{
+    static int water_pos_y = 0;
+
+    jo_sprite_enable_half_transparency();
+    jo_sprite_draw3D(sprite_id, 0, water_pos_y - sprite_height - sprite_height, 400);
+    jo_sprite_draw3D(sprite_id, 0, water_pos_y - sprite_height, 400);
+    jo_sprite_draw3D(sprite_id, 0, water_pos_y, 400);
+    jo_sprite_draw3D(sprite_id, 0, water_pos_y + sprite_height, 400);
+    jo_sprite_disable_half_transparency();
+    water_pos_y += speed;
+    if (water_pos_y > sprite_height)
+        water_pos_y = 0;
+}
 
 void                next_level(void)
 {
@@ -124,7 +140,7 @@ void                my_draw(void)
 {
     if (!gameover && enemies_list.count <= 0)
         next_level();
-
+    draw_water(water_sprite_id, 96, 3);
     jo_printf(1, 28, "OUMF Simulation Level: %d  ", level);
     jo_printf(1, 1, "Score: %d  ", ship.score);
     jo_printf(28, 1, "HiScore: %d  ", ship.hiScore); //HiScore support :)
@@ -234,12 +250,13 @@ void            init_game(void)
         {0, 0, 40, 38},
     };
 
-  	first_ship_sprite_id = jo_sprite_add_tga_tileset(JO_ROOT_DIR, "SHIP.TGA", JO_COLOR_Blue, ship_tileset, SHIP_TILE_COUNT);
+  	first_ship_sprite_id = jo_sprite_add_tga_tileset(JO_ROOT_DIR, "SHIP.TGA", JO_COLOR_Red, ship_tileset, SHIP_TILE_COUNT);
     enemy_sprite_id = jo_sprite_add_tga(JO_ROOT_DIR, "EN.TGA", JO_COLOR_Blue);
 //  enemy2_sprite_id = jo_sprite_add_tga(JO_ROOT_DIR, "EN.TGA", JO_COLOR_Blue); SOON
     blast_sprite_id = jo_sprite_add_tga(JO_ROOT_DIR, "BLAST.TGA", JO_COLOR_Blue);
     shield_sprite_id = jo_sprite_add_tga(JO_ROOT_DIR, "SHIELD.TGA", JO_COLOR_Blue);
     ship.anim_id = jo_create_sprite_anim(first_ship_sprite_id, SHIP_TILE_COUNT, 3);
+    water_sprite_id = jo_sprite_add_tga(JO_ROOT_DIR, "FOG.TGA", JO_COLOR_Green);
     ship.speed = 4;
     ship.score = 0;
     ship.shield_pos.x = 0;
@@ -255,7 +272,7 @@ void			jo_main(void)
 	jo_core_init(JO_COLOR_Black);
     jo_set_background_sprite(&SpriteBg, 0, 0);
     init_game();
-	jo_core_add_callback(my_gamepad);
+    jo_core_add_callback(my_gamepad);
 	jo_core_add_callback(my_draw);
 	jo_core_run();
 }
