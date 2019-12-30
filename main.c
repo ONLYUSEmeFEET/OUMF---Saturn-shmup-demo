@@ -192,11 +192,13 @@ void                restart_game(void)
 
 static inline void         shoot(void)
 {
-    jo_list_data    blast;
-
+    if (laser_blast_list.count < 3) //limit laser amount
+    {
+    jo_list_data blast;
     blast.coord.x = ship.x;
     blast.coord.y = ship.y - 28;
     jo_list_add(&laser_blast_list, blast);
+    }
 }
 
 void			my_gamepad(void)
@@ -209,9 +211,10 @@ void			my_gamepad(void)
         return ;
     if (jo_is_pad1_key_down(JO_KEY_A))
         shoot();
-    if (jo_is_pad1_key_down(JO_KEY_B)) //More fire buttons more DESTRUCTION
+    if (jo_is_pad1_key_pressed(JO_KEY_B)) //Autofire!
         shoot();
-    if (jo_is_pad1_key_down(JO_KEY_C)) //More fire buttons more DESTRUCTION
+        asm("nop");
+    if (jo_is_pad1_key_down(JO_KEY_C))
         shoot();
     if (jo_is_pad1_key_pressed(JO_KEY_LEFT) && ship.x > -(JO_TV_WIDTH_2 - 16))
     {
