@@ -29,8 +29,8 @@
 #include "ship.h"
 #include "background.h"
 
-#define CD_LOOP 1     //音楽トラックの制御
-#define TRACK_LEVEL1 2 //主な音楽
+#define CD_LOOP 1     
+#define TRACK_LEVEL1 2 //1st level BGM 
 
 static t_ship       ship;
 static int          first_ship_sprite_id;
@@ -46,6 +46,8 @@ static char         having_shield = 1;
 static int          water_sprite_id = 0;
 static jo_sound     blop;
 
+static jo_datetime cow;
+
 void draw_water(int sprite_id, int sprite_height, int speed)
 {
     static int water_pos_y = 0;
@@ -60,6 +62,16 @@ void draw_water(int sprite_id, int sprite_height, int speed)
     if (water_pos_y > sprite_height)
         water_pos_y = 0;
 }
+
+/* 
+///NOT WORKING
+void gimme_date (void) {
+    while (1 == 1) {
+        jo_getdate(&cow);
+        break;
+    }
+    return cow;
+} */
 
 void                next_level(void)
 {
@@ -142,12 +154,15 @@ static inline void         draw_enemy(jo_node *node)
 
 void                my_draw(void)
 {
-    if (!gameover && enemies_list.count <= 0)
+if (!gameover && enemies_list.count <= 0)
         next_level();
+
     draw_water(water_sprite_id, 96, 3);
+
     jo_printf(1, 28, "OUMF Simulation Level: %d  ", level);
     jo_printf(1, 1, "Score: %d  ", ship.score);
     jo_printf(28, 1, "HiScore: %d  ", ship.hiScore); //HiScore support :)
+//    jo_printf(1, 26, "Time: %d:%d:%d    ", cow.hour, cow.minute, cow.second); //Print current time
 
 #ifdef JO_DEBUG
     jo_printf(1, 2, jo_get_last_error());
@@ -306,7 +321,8 @@ void			jo_main(void)
     jo_audio_play_cd_track(TRACK_LEVEL1, TRACK_LEVEL1, CD_LOOP);
     jo_core_add_callback(my_gamepad);
 	jo_core_add_callback(my_draw);
-	jo_core_run();
+//    jo_core_add_callback(gimme_date);
+    jo_core_run();
 
 }
 
