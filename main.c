@@ -29,6 +29,9 @@
 #include "ship.h"
 #include "background.h"
 
+#define CD_LOOP 1     //音楽トラックの制御
+#define TRACK_LEVEL1 2 //主な音楽
+
 static t_ship       ship;
 static int          first_ship_sprite_id;
 static int          blast_sprite_id;
@@ -41,6 +44,7 @@ static int          level = 0;
 static int          gameover = 0;
 static char         having_shield = 1;
 static int          water_sprite_id = 0;
+static jo_sound     blop;
 
 void draw_water(int sprite_id, int sprite_height, int speed)
 {
@@ -157,6 +161,7 @@ void                my_draw(void)
     else
 
     {
+        jo_audio_stop_cd();
         jo_printf(8, 14, "Game over YEEEAAAHHHH!");
         jo_printf(8, 16, "Press Start to restart.");
         if (ship.score == ship.hiScore)
@@ -181,6 +186,7 @@ static inline void         start_ship_animation(t_ship_horiz_move move, char is_
 
 void                restart_game(void)
 {
+    jo_audio_play_cd_track(TRACK_LEVEL1, TRACK_LEVEL1, CD_LOOP);
     jo_list_clear(&laser_blast_list);
     jo_list_clear(&enemies_list);
     level = 0;
@@ -198,7 +204,27 @@ static inline void         shoot(void)
     blast.coord.x = ship.x;
     blast.coord.y = ship.y - 28;
     jo_list_add(&laser_blast_list, blast);
+    jo_audio_play_sound_on_channel(&blop, 0);
     }
+}
+
+void load_blop_sound(void)
+{
+    /*
+		To convert any audio file to PCM under Linux or Windows => http://ffmpeg.org
+
+		Just some restriction due to the Sega Saturn hardware:
+
+		Compatible Samplerate : 8000 to 44100 Hz (-ar option)
+		Compatible PCM format : s8 (-f option)
+		Compatible mode: 8/16 bit mono/stereo
+
+		Some command line:
+
+		ffmpeg -i A.WAV -f s16be -ar 44100 A.PCM => JoSoundMono16Bit
+		ffmpeg -i A.MP3 -f s8 -ac 1 -ar 8000 A.PCM => JoSoundStereo8Bit
+	*/
+    jo_audio_load_pcm("A.PCM", JoSoundMono16Bit, &blop);
 }
 
 void			my_gamepad(void)
@@ -243,6 +269,7 @@ void			my_gamepad(void)
 
 void            init_game(void)
 {
+
     jo_tile     ship_tileset[SHIP_TILE_COUNT] =
     {
         {200, 0, 40, 38},
@@ -253,7 +280,7 @@ void            init_game(void)
         {0, 0, 40, 38},
     };
 
-  	first_ship_sprite_id = jo_sprite_add_tga_tileset(JO_ROOT_DIR, "SHIP.TGA", JO_COLOR_Red, ship_tileset, SHIP_TILE_COUNT);
+    first_ship_sprite_id = jo_sprite_add_tga_tileset(JO_ROOT_DIR, "SHIP.TGA", JO_COLOR_Red, ship_tileset, SHIP_TILE_COUNT);
     enemy_sprite_id = jo_sprite_add_tga(JO_ROOT_DIR, "EN.TGA", JO_COLOR_Blue);
 //  enemy2_sprite_id = jo_sprite_add_tga(JO_ROOT_DIR, "EN.TGA", JO_COLOR_Blue); SOON
     blast_sprite_id = jo_sprite_add_tga(JO_ROOT_DIR, "BLAST.TGA", JO_COLOR_Blue);
@@ -272,12 +299,15 @@ void            init_game(void)
 
 void			jo_main(void)
 {
-	jo_core_init(JO_COLOR_Black);
+    jo_core_init(JO_COLOR_Black);
+    load_blop_sound();
     jo_set_background_sprite(&SpriteBg, 0, 0);
     init_game();
+    jo_audio_play_cd_track(TRACK_LEVEL1, TRACK_LEVEL1, CD_LOOP);
     jo_core_add_callback(my_gamepad);
 	jo_core_add_callback(my_draw);
 	jo_core_run();
+
 }
 
 /*

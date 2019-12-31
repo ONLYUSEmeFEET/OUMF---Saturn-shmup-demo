@@ -356,1119 +356,1120 @@ SLSTART         0x06004000       0x30
                 0x06004002                slStartSGL
                 0x06004000                SGL_Start
 
-.text           0x06004040    0x57090
+.text           0x06004040    0x57100
  *(.text)
- .text          0x06004040    0x40b70 main.o
+ .text          0x06004040    0x40be0 main.o
                 0x06004040                SpriteBg
-                0x06044204                jo_main
-                0x06044930                my_gamepad
-                0x060440ac                init_game
-                0x0604425c                next_level
-                0x060446a6                my_draw
-                0x06044388                draw_water
-                0x0604432c                restart_game
- .text          0x06044bb0      0x790 ../../jo_engine/tga.o
-                0x06045200                jo_tga_loader_from_stream
-                0x06045130                jo_sprite_add_tga
-                0x060452a0                jo_sprite_add_tga_from_stream
-                0x0604508c                jo_tga_loader
-                0x06044d26                jo_sprite_add_tga_tileset
-                0x06044bee                __jo_tga_load
- .text          0x06045340      0x430 ../../jo_engine/audio.o
-                0x060453a4                jo_audio_init
-                0x060455a8                jo_audio_usage_percent
-                0x06045616                jo_audio_free_pcm
-                0x06045384                jo_audio_stop_cd
-                0x0604543e                jo_audio_play_sound_on_channel
-                0x06045512                jo_audio_play_sound
-                0x06045664                jo_audio_stop_sound
-                0x0604570e                jo_audio_load_pcm
-                0x06045340                jo_audio_play_cd_track
-                0x06045378                jo_audio_set_volume
- .text          0x06045770      0x9c0 ../../jo_engine/fs.o
-                0x0604602c                jo_fs_seek_forward
-                0x06045e60                jo_fs_read_file
-                0x06045dea                jo_fs_set_read_sector_count
-                0x0604578e                jo_fs_init
-                0x06045b86                jo_fs_open
-                0x0604596a                jo_fs_read_file_async
-                0x06045d78                jo_fs_close
-                0x06045c94                jo_fs_read_next_bytes
-                0x06045ad4                jo_fs_cd
-                0x06045814                jo_fs_do_background_jobs
-                0x06045fb8                jo_fs_read_file_in_dir
- .text          0x06046130      0x420 ../../jo_engine/storyboard.o
-                0x060461a0                jo_execute_storyboards
-                0x06046150                jo_storyboard_create_animation
-                0x0604647c                jo_storyboard_create
-                0x06046130                jo_init_storyboards
-                0x060464d4                jo_storyboard_destroy
- .text          0x06046550      0x570 ../../jo_engine/font.o
-                0x0604685c                jo_font_print_centered
-                0x060469aa                jo_font_print
-                0x060465c6                jo_font_load
- .text          0x06046ac0       0x50 ../../jo_engine/input.o
-                0x06046ac0                jo_get_input_type
- .text          0x06046b10      0x9b0 ../../jo_engine/core.o
-                0x06046b34                jo_core_wait_for_slave
-                0x06046bce                jo_core_suspend
-                0x060470ca                jo_core_add_callback
-                0x06046b54                jo_core_exec_on_slave
-                0x060473d4                jo_core_run
-                0x06046fa2                jo_core_remove_slave_callback
-                0x06046f24                jo_dump_vdp1_registers
-                0x06046b68                jo_goto_boot_menu
-                0x06047012                jo_core_add_slave_callback
-                0x06046d3a                __jo_core_error
-                0x06047074                jo_core_remove_callback
-                0x06046eb0                jo_dump_vdp2_registers
-                0x06047166                jo_core_init
-                0x06046b74                main
- .text          0x060474c0      0x3c0 ../../jo_engine/math.o
-                0x060474c0                jo_random
-                0x060477bc                jo_planar_rotate
-                0x060476f4                jo_sqrt
-                0x06047760                jo_gcd
-                0x06047534                jo_atan2f_rad
- .text          0x06047880      0x400 ../../jo_engine/malloc.o
-                0x06047bfc                jo_memory_fragmentation
-                0x06047acc                jo_memory_usage_percent
-                0x06047880                jo_add_memory_zone
-                0x06047a38                jo_free
-                0x06047914                jo_malloc_with_behaviour
- .text          0x06047c80      0x450 ../../jo_engine/tools.o
-                0x0604803c                jo_endwith
-                0x06047ee0                jo_getdate
-                0x06047d2a                jo_clear_screen
-                0x06047de2                jo_strlen
-                0x06047ce8                jo_get_current_language
-                0x06047d76                jo_tools_atoi
-                0x06047c98                jo_print
-                0x06047e2c                jo_memset
-                0x06047e80                jo_map_to_vram
- .text          0x060480d0      0x8a0 ../../jo_engine/sprites.o
-                0x06048558                jo_sprite_usage_percent
-                0x060487ae                jo_sprite_add_8bits_image
-                0x06048862                jo_sprite_draw
-                0x060480d0                jo_get_last_sprite_id
-                0x06048158                jo_sprite_init
-                0x060481a2                jo_sprite_name2id
-                0x06048272                jo_sprite_draw_rotate
-                0x06048454                jo_sprite_replace
-                0x06048214                jo_set_gouraud_shading_colors
-                0x060480dc                jo_sprite_free_from
-                0x0604823c                jo_set_gouraud_shading_brightness
-                0x0604880a                jo_sprite_add
- .text          0x06048970      0x8e0 ../../jo_engine/map.o
-                0x06049028                jo_map_per_pixel_vertical_collision
-                0x06049170                jo_map_draw
-                0x0604898e                jo_map_create
-                0x06048adc                jo_map_add_tile
-                0x06048b00                jo_map_add_animated_tile
-                0x06048d2a                jo_map_load_from_file
-                0x06048bb0                jo_map_free
-                0x06048bc8                jo_map_move_tiles_by_attribute
-                0x06048c38                jo_map_hitbox_detection_custom_boundaries
-                0x06048b24                jo_map_draw_background
- .text          0x06049250       0xf0 ../../jo_engine/list.o
-                0x06049250                jo_list_remove
-                0x06049294                jo_list_init
-                0x060492be                jo_list_add
- .text          0x06049340      0x280 ../../jo_engine/sprite_animator.o
-                0x06049598                jo_clear_all_sprite_anim
-                0x060494dc                jo_create_sprite_anim
-                0x060493fe                jo_replace_sprite_anim
- .text          0x060495c0      0x800 ../../jo_engine/image.o
-                0x060495d8                jo_free_img
-                0x06049c82                jo_sprite_add_image_pack
-                0x060496a2                __jo_bin_load
-                0x06049632                jo_replace_color
-                0x06049a30                jo_sprite_add_bin_from_stream
-                0x0604990e                jo_bin_loader_from_stream
-                0x06049756                jo_sprite_add_bin_tileset
-                0x06049ad0                jo_bin_loader
-                0x06049b62                jo_sprite_add_bin
- .text          0x06049dc0      0x170 ../../jo_engine/background.o
-                0x06049ee0                jo_clear_background
-                0x06049e50                jo_set_background_sprite
-                0x06049dc0                jo_draw_background_line
- .text          0x06049f30      0x120 ../../jo_engine/time.o
-                0x0604a01c                jo_time_init
-                0x06049f30                jo_get_ticks
- .text          0x0604a050      0x238 ../../Compiler/SGL_302j/LIB_COFF/SEGA_SYS.A(sys_exit.o)
-                0x0604a070                SYS_Exit
-                0x0604a050                sys_version
- *fill*         0x0604a288        0x8 00
- .text          0x0604a290        0x6 ../../Compiler/SGL_302j/LIB_COFF/SEGA_SYS.A(sys_sub.o)
-                0x0604a290                SYSUB_SetStackptr
- *fill*         0x0604a296        0xa 00
- .text          0x0604a2a0      0x130 ../../Compiler/SGL_302j/LIB_COFF/LIBCD.A(CDC_DRV.O)
-                0x0604a2a0                CDC_CdPlay
-                0x0604a36c                CDC_CdSeek
-                0x0604a3a0                CDC_CdScan
- .text          0x0604a3d0      0x3a0 ../../Compiler/SGL_302j/LIB_COFF/LIBCD.A(CDC_CMN.O)
-                0x0604a574                CDC_TgetToc
-                0x0604a718                CDC_DataEnd
-                0x0604a438                CDC_GetPeriStat
-                0x0604a6ac                CDC_DataReady
-                0x0604a684                CDC_CdOpen
-                0x0604a600                CDC_CdInit
-                0x0604a5c4                CDC_GetSes
-                0x0604a420                CDC_GetLastStat
-                0x0604a3d0                CDC_GetCurStat
-                0x0604a50c                CDC_GetHwInfo
- .text          0x0604a770     0x1adc ../../Compiler/SGL_302j/LIB_COFF/LIBCD.A(GFS.O)
-                0x0604a770                gfs_version
-                0x0604b9e0                gfs_mngGetNumFile
-                0x0604c13c                gfs_closeSub
-                0x0604b4fc                GFS_SetGmode
-                0x0604b7b8                GFS_SetErrFunc
-                0x0604b908                gfs_mngSetupFuncTbl
-                0x0604aac8                GFS_Reset
-                0x0604b830                gfs_chgRoot
-                0x0604b8fc                gfs_aborttrans
-                0x0604bbe0                gfs_svrAddHndl
-                0x0604ba90                gfs_mngFreeGrp
-                0x0604b808                GFS_ConvTno
-                0x0604bd94                gfs_getRootDir
-                0x0604b7e4                GFS_GetErrStat
-                0x0604ac38                GFS_Seek
-                0x0604b2a8                GFS_NwStop
-                0x0604ba9c                gfs_mngTermAccess
-                0x0604ab4c                GFS_Open
-                0x0604ba48                GFS_mngAllocGrp
-                0x0604c184                gfs_isTaskDone
-                0x0604afa8                GFS_Fread
-                0x0604b700                GFS_StartTrans
-                0x0604c0fc                gfs_GetFinfo
-                0x0604b93c                gfs_mngInitWork
-                0x0604ad90                GFS_ByteToSct
-                0x0604bba0                gfs_svrSearchHndl
-                0x0604be90                gfs_loadRootDir
-                0x0604a9ec                GFS_IdToName
-                0x0604b0ec                GFS_NwFread
-                0x0604b630                GFS_SetTransPara
-                0x0604b1f8                GFS_NwCdRead
-                0x0604bcd0                gfs_loadVol
-                0x0604b5cc                GFS_SetReadPara
-                0x0604acec                GFS_Tell
-                0x0604b560                GFS_SetTmode
-                0x0604c064                GFS_GetFad
-                0x0604b69c                GFS_SetTrFunc
-                0x0604b74c                GFS_CdMovePickup
-                0x0604a988                GFS_NameToId
-                0x0604b3c0                GFS_NwExecOne
-                0x0604bf18                gfs_flowIn
-                0x0604ae48                GFS_GetFileInfo
-                0x0604bfc0                gfs_transData
-                0x0604bc1c                gfs_svrRemoveHndl
-                0x0604b270                GFS_NwIsComplete
-                0x0604c178                gfs_getGmode
-                0x0604b314                GFS_NwGetStat
-                0x0604bc78                GFS_OpenSub
-                0x0604a920                GFS_SetDir
-                0x0604adec                GFS_GetFileSize
-                0x0604aebc                GFS_GetNumCdbuf
-                0x0604c1d8                gfs_convFinStat
-                0x0604aee4                GFS_Load
-                0x0604b044                gfs_waitRead
-                0x0604a878                GFS_LoadDir
-                0x0604aa58                GFS_GetDirInfo
-                0x0604ac00                GFS_Close
-                0x0604a790                GFS_Init
-                0x0604b390                gfs_recovRdErr
-                0x0604bb20                gfs_mngSetErrCode
-                0x0604b480                GFS_NwExecServer
-                0x0604ad3c                GFS_IsEof
-                0x0604c0bc                gfs_SetSct
- *fill*         0x0604c24c        0x4 00
- .text          0x0604c250      0x2dc ../../Compiler/SGL_302j/LIB_COFF/LIBCD.A(CDC_REG.O)
-                0x0604c2a4                CDREG_ClrHirqReq
-                0x0604c274                CDC_ClrHirqReq
-                0x0604c324                CDREG_TgetData
-                0x0604c314                CDC_GetMpegPtr
-                0x0604c2f0                CDC_GetHirqMsk
-                0x0604c250                CDC_GetDataPtr
-                0x0604c260                CDC_GetHirqReq
-                0x0604c480                CDREG_WaitHirq
-                0x0604c304                CDC_SetHirqMsk
-                0x0604c380                CDREG_CmdRsp
-                0x0604c2b4                CDREG_InitHirqReq
-                0x0604c2dc                CDREG_SetHirqFlag
-                0x0604c4f0                CDREG_ReadRsp
- *fill*         0x0604c52c        0x4 00
- .text          0x0604c530      0x194 ../../Compiler/SGL_302j/LIB_COFF/LIBCD.A(CDC_CFS.O)
-                0x0604c530                CDC_ChgDir
-                0x0604c564                CDC_ReadDir
-                0x0604c688                CDC_AbortFile
-                0x0604c598                CDC_GetFileScope
-                0x0604c5f8                CDC_TgetFileInfo
-                0x0604c654                CDC_ReadFile
- *fill*         0x0604c6c4        0xc 00
- .text          0x0604c6d0      0x152 ../../Compiler/SGL_302j/LIB_COFF/LIBCD.A(CDC_SUB.O)
-                0x0604c778                CDSUB_GetCdstat
-                0x0604c6e8                CDSUB_UpdCdstat
-                0x0604c7b8                CDSUB_RspToCdstat
-                0x0604c800                CDSUB_SoftTimer
-                0x0604c6d0                CDSUB_UpdStatus
-                0x0604c708                CDSUB_CdCmd
- *fill*         0x0604c822        0xe 00
- .text          0x0604c830      0x8d8 ../../Compiler/SGL_302j/LIB_COFF/LIBCD.A(GFS_CDF.O)
-                0x0604cd24                GFCF_Seek
-                0x0604ce2c                GFCF_GetStat
-                0x0604cd0c                GFCF_Tell
-                0x0604c8d0                GFCF_Setup
-                0x0604cdd8                GFCF_cnvIntlvOfs
-                0x0604c830                GFCF_Init
-                0x0604ccc4                GFCF_Recover
-                0x0604ca18                GFCF_SetSct
-                0x0604cd3c                GFCF_MovePickup
-                0x0604cf00                gfcf_isCdOk
-                0x0604cad0                GFCF_FlowInBuf
-                0x0604ca5c                GFCF_GetFileInfo
-                0x0604cc24                GFCF_StopInBuf
-                0x0604cec4                gfcf_getSctSize
-                0x0604cfc0                gfcf_getPlayRange
- *fill*         0x0604d108        0x8 00
- .text          0x0604d110      0x92c ../../Compiler/SGL_302j/LIB_COFF/LIBCD.A(GFS_DIR.O)
-                0x0604d600                gfdr_setNextRec
-                0x0604da00                gfdr_setDirrecCd
-                0x0604d3f8                gfdr_open
-                0x0604d20c                GFDR_GetAtrDirId
-                0x0604d4e0                gfdr_readByte
-                0x0604d110                GFDR_SetupDirTbl
-                0x0604d5d8                gfdr_readLongNM
-                0x0604d684                gfdr_readDirEnt
-                0x0604d23c                GFDR_ChgRoot
-                0x0604d184                GFDR_NameToId
-                0x0604d2c8                gfdr_setupDirIdTbl
-                0x0604d224                GFDR_GetAtrDirName
-                0x0604d1e4                GFDR_GetInfoDirId
-                0x0604d58c                gfdr_readLongNB
-                0x0604d420                gfdr_read
-                0x0604d50c                gfdr_readWord
-                0x0604d34c                gfdr_setupDirNameTbl
-                0x0604d1f8                GFDR_GetInfoDirName
-                0x0604d254                GFDR_ChgDir
-                0x0604d538                gfdr_readWordNB
- *fill*         0x0604da3c        0x4 00
- .text          0x0604da40      0x9c6 ../../Compiler/SGL_302j/LIB_COFF/LIBCD.A(GFS_TRN.O)
-                0x0604db20                GFTR_SetTransMax
-                0x0604def0                gftr_execScu
-                0x0604e3f4                GFTR_SetTransFunc
-                0x0604e2bc                gftr_remTrn
-                0x0604e3e0                GFTR_SetData
-                0x0604e0e0                gftr_execSdma1
-                0x0604e330                gftr_copyFrac
-                0x0604db14                GFTR_GetNumTrans
-                0x0604dab4                GFTR_SetMode
-                0x0604e0b0                gftr_remDma0
-                0x0604e358                GFTR_GetLenData
-                0x0604dee4                gftr_reqScu
-                0x0604e0c8                gftr_reqDma1
-                0x0604de00                gftr_getSrcPack
-                0x0604e3b0                GFTR_RtnDstPk
-                0x0604dfcc                gfdma_exec
-                0x0604e1e4                gftr_execTrn
-                0x0604dcf8                GFTR_ExecSvr
-                0x0604e174                gftr_reqTrn
-                0x0604e03c                gfdma_getBytecnt
-                0x0604e11c                gftr_reqCpu
-                0x0604e37c                GFTR_GetDstPack
-                0x0604e074                gftr_reqDma0
-                0x0604dc80                GFTR_Idle
-                0x0604db38                GFTR_Pause
-                0x0604db08                GFTR_GetTransPara
-                0x0604e168                gftr_remCpu
-                0x0604dad4                GFTR_SetTransPara
-                0x0604e104                gftr_remDma1
-                0x0604db44                GFTR_Stop
-                0x0604e08c                gftr_execSdma0
-                0x0604da70                GFTR_Setup
-                0x0604df8c                gftr_remScu
-                0x0604de88                gftr_getDstPack
-                0x0604dfc0                gfdma_canUse
-                0x0604dbfc                GFTR_Exec
-                0x0604e3cc                GFTR_GetData
-                0x0604db2c                GFTR_Start
-                0x0604dac8                GFTR_SetUnit
-                0x0604e128                gftr_execCpu
-                0x0604e364                GFTR_GetLenRoom
- *fill*         0x0604e406        0xa 00
- .text          0x0604e410      0x106 ../../Compiler/SGL_302j/LIB_COFF/LIBCD.A(GFS_BUF.O)
-                0x0604e468                GFBF_GetNumData
-                0x0604e4e4                GFBF_RtnPk
-                0x0604e498                GFBF_GetSrcPk
-                0x0604e50c                gfbf_getSctDt
-                0x0604e440                GFBF_GetTranData
-                0x0604e4c0                GFBF_GetSctData
- *fill*         0x0604e516        0xa 00
- .text          0x0604e520      0x600 ../../Compiler/SGL_302j/LIB_COFF/LIBCD.A(GFS_CDB.O)
-                0x0604eac8                GFCB_GetPickup
-                0x0604e640                GFCB_Close
-                0x0604e90c                GFCB_GetSrcPack
-                0x0604ea94                GFCB_SetCon
-                0x0604e714                GFCB_GetLenRoom
-                0x0604ea78                GFCB_MovePickup
-                0x0604e9ec                GFCB_GetSctData
-                0x0604e720                GFCB_SetFilt
-                0x0604e668                GFCB_GetLenData
-                0x0604eb08                GFCB_UngetPickup
-                0x0604e520                GFCB_Setup
-                0x0604e7b0                GFCB_Tell
-                0x0604eaf0                GFCB_IsPuOwner
-                0x0604e810                GFCB_Seek
-                0x0604e788                GFCB_DeleteAllData
-                0x0604ea24                GFCB_GetDstPack
-                0x0604e7c0                gfcb_getSctNum
-                0x0604ea30                GFCB_RtnPk
- .text          0x0604eb20     0x1a10 ../../Compiler/SGL_302j/LIB_COFF/LIBCD.A(GFS_CDC.O)
-                0x0604edbc                GFCD_AllocBuf
-                0x0604fba4                gfcd_doGetLenDataTsk
-                0x06050440                GFCD_SetCsctFunc
-                0x0604ee94                GFCD_GetBaseFad
-                0x0604f010                GFCD_GetFilt
-                0x06050030                gfcd_doChgDirTsk
-                0x06050370                gfcd_checkEflag
-                0x0604f358                GFCD_MovePickup
-                0x0604f43c                GFCD_GetSctInfo
-                0x0604fcf8                gfcd_doReqDataTsk
-                0x0604f484                GFCD_ChgDir
-                0x0604f178                GFCD_ReqData
-                0x0605045c                GFCD_ChkScdqFlag
-                0x0604f914                GFCD_WaitServer
-                0x0604f21c                GFCD_DelSctData
-                0x0604f6f4                GFCD_ExecServer
-                0x0604fb14                gfcd_doSetConTsk
-                0x0604ed50                GFCD_AllocFilt
-                0x0604ef4c                GFCD_SetFilt
-                0x0604f950                gfcd_doSetFiltTsk
-                0x06050480                GFCD_ClrScdqFlag
-                0x0604fd98                gfcd_doDelSctDataTsk
-                0x0604f854                gfcd_doTask
-                0x0604eec8                GFCD_GetPickup
-                0x0604f418                GFCD_CheckMove
-                0x0605049c                GFCD_WaitScdqFlag
-                0x0604f0b0                GFCD_Play
-                0x0604fecc                gfcd_doMoveSctTsk
-                0x0604f058                GFCD_SetCon
-                0x0604f4f8                GFCD_SetFiltCon
-                0x060504e0                GFCD_WaitPause
-                0x0604f6bc                GFCD_GetBufSiz
-                0x0604eefc                GFCD_UngetPickup
-                0x0604f5e0                GFCD_GetFileInfo
-                0x0604f1d4                GFCD_EndData
-                0x0604edf0                GFCD_FreeBuf
-                0x0604f110                GFCD_GetLenData
-                0x0604ed8c                GFCD_FreeFilt
-                0x0604f7c8                gfcd_isIdleTask
-                0x0604eb4c                GFCD_Init
-                0x0605022c                gfcd_doSetFiltConTsk
-                0x0604f2a4                GFCD_GetStat
-                0x0604f3a4                GFCD_MoveSctData
-                0x0604ef28                GFCD_IsPuOwner
-                0x06050394                gfcd_initCdbMng
-                0x0604eb20                GFCD_SetCdbfs
-                0x0604f900                GFCD_SetTimer
-                0x06050414                gfcd_setStat
-                0x0604f274                GFCD_CheckDelSctData
- .text          0x06050530      0x1e4 ../../Compiler/SGL_302j/LIB_COFF/LIBCD.A(CDC_BIO.O)
-                0x060505dc                CDC_GetdelSctData
-                0x06050564                CDC_GetSctData
-                0x06050618                CDC_PutSctData
-                0x06050694                CDC_MoveSctData
-                0x060506d8                CDC_GetCopyErr
-                0x060505a0                CDC_DelSctData
-                0x06050530                CDC_SetSctLen
-                0x06050650                CDC_CopySctData
- *fill*         0x06050714        0xc 00
- .text          0x06050720      0x2b8 ../../Compiler/SGL_302j/LIB_COFF/LIBCD.A(CDC_SEL.O)
-                0x06050950                CDC_GetFiltCon
-                0x060508cc                CDC_GetFiltMode
-                0x060509a4                CDC_ResetSelector
-                0x06050720                CDC_SetFiltRange
-                0x060507ac                CDC_SetFiltSubh
-                0x0605081c                CDC_GetFiltSubh
-                0x06050754                CDC_GetFiltRange
-                0x06050898                CDC_SetFiltMode
-                0x06050910                CDC_SetFiltCon
- *fill*         0x060509d8        0x8 00
- .text          0x060509e0      0x270 ../../Compiler/SGL_302j/LIB_COFF/LIBCD.A(CDC_BIF.O)
-                0x06050a3c                CDC_GetSctNum
-                0x06050bbc                CDC_ExeFadSearch
-                0x06050b3c                CDC_GetSctInfo
-                0x06050a80                CDC_CalActSiz
-                0x060509e0                CDC_GetBufSiz
-                0x06050abc                CDC_GetActSiz
-                0x06050bf4                CDC_GetFadSearch
- .text          0x06050c50       0xa8 ../../Compiler/SGL_302j/LIB_COFF/LIBCD.A(CDC_DEV.O)
-                0x06050cbc                CDC_CdGetLastBuf
-                0x06050c50                CDC_CdSetCon
-                0x06050c80                CDC_CdGetCon
- *fill*         0x06050cf8        0x8 00
- .text          0x06050d00      0x128 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglIc0.o)
-                0x06050d00                slInitSystem
- *fill*         0x06050e28        0x8 00
- .text          0x06050e30       0x90 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_si_to_sf.o)
-                0x06050e30                __floatsisf
- .text          0x06050ec0      0x170 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_mul_sf.o)
-                0x06050ec0                __mulsf3
- .text          0x06051030       0xa0 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_sf_to_si.o)
-                0x06051030                __fixsfsi
- .text          0x060510d0       0x70 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_udivsi3.o)
-                0x060510f2                __udivsi3
- .text          0x06051140       0x60 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_ashiftrt.o)
-                0x0605114c                __ashiftrt_r4_27
-                0x06051180                __ashiftrt_r4_6
-                0x06051170                __ashiftrt_r4_14
-                0x06051162                __ashiftrt_r4_19
-                0x0605117a                __ashiftrt_r4_9
-                0x0605118e                __ashiftrt_r4_0
-                0x06051140                __ashiftrt_r4_31
-                0x0605114e                __ashiftrt_r4_26
-                0x0605115c                __ashiftrt_r4_22
-                0x06051168                __ashiftrt_r4_16
-                0x06051174                __ashiftrt_r4_12
-                0x06051148                __ashiftrt_r4_29
-                0x06051166                __ashiftrt_r4_17
-                0x06051146                __ashiftrt_r4_30
-                0x06051182                __ashiftrt_r4_5
-                0x0605117c                __ashiftrt_r4_8
-                0x06051140                __ashiftrt_r4_32
-                0x06051150                __ashiftrt_r4_25
-                0x06051188                __ashiftrt_r4_2
-                0x06051152                __ashiftrt_r4_24
-                0x0605116e                __ashiftrt_r4_15
-                0x06051178                __ashiftrt_r4_10
-                0x0605118a                __ashiftrt_r4_1
-                0x0605114a                __ashiftrt_r4_28
-                0x06051160                __ashiftrt_r4_20
-                0x0605117e                __ashiftrt_r4_7
-                0x06051172                __ashiftrt_r4_13
-                0x06051176                __ashiftrt_r4_11
-                0x06051184                __ashiftrt_r4_4
-                0x0605115a                __ashiftrt_r4_23
-                0x06051164                __ashiftrt_r4_18
-                0x0605115e                __ashiftrt_r4_21
-                0x06051186                __ashiftrt_r4_3
- .text          0x060511a0       0xa0 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(__main.o)
-                0x06051214                __main
-                0x060511a0                __do_global_dtors
-                0x060511d4                __do_global_ctors
- .text          0x06051240       0xa0 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_sdivsi3.o)
-                0x06051240                __sdivsi3
- .text          0x060512e0       0x70 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_le_sf.o)
-                0x060512e0                __lesf2
- .text          0x06051350       0x70 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_ge_sf.o)
-                0x06051350                __gesf2
- .text          0x060513c0       0x70 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_gt_sf.o)
-                0x060513c0                __gtsf2
- .text          0x06051430      0x120 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_div_sf.o)
-                0x06051430                __divsf3
- .text          0x06051550       0x70 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_lt_sf.o)
-                0x06051550                __ltsf2
- .text          0x060515c0      0x250 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_addsub_sf.o)
-                0x06051754                __subsf3
-                0x060517b4                __addsf3
- .text          0x06051810      0x100 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_sf_to_df.o)
-                0x06051810                __extendsfdf2
- .text          0x06051910       0x70 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_df_to_sf.o)
-                0x06051910                __truncdfsf2
- .text          0x06051980      0x350 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_addsub_df.o)
-                0x06051c0c                __subdf3
-                0x06051c70                __adddf3
- .text          0x06051cd0       0x90 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_lshiftrt.o)
-                0x06051cd0                __lshrsi3
- .text          0x06051d60       0xb0 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_si_to_df.o)
-                0x06051d60                __floatsidf
- .text          0x06051e10      0x3b0 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_mul_df.o)
-                0x06051e20                __muldf3
- .text          0x060521c0      0x1b0 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_div_df.o)
-                0x060521c8                __divdf3
- .text          0x06052370      0x100 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_df_to_si.o)
-                0x06052370                __fixdfsi
- .text          0x06052470       0x90 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_ashiftrt_n.o)
-                0x06052470                __ashrsi3
- .text          0x06052500       0x90 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_ashiftlt.o)
-                0x06052500                __ashlsi3
- .text          0x06052590      0x1c0 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_pack_sf.o)
-                0x06052590                __pack_f
- .text          0x06052750       0xc0 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_unpack_sf.o)
-                0x06052750                __unpack_f
- .text          0x06052810       0xd0 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_muldi3.o)
-                0x06052810                __muldi3
- .text          0x060528e0       0x10 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_thenan_sf.o)
-                0x060528e0                __thenan_sf
- .text          0x060528f0       0xa0 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_fpcmp_parts_sf.o)
-                0x060528f0                __fpcmp_parts_f
- .text          0x06052990       0x30 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_make_df.o)
-                0x06052990                __make_dp
- .text          0x060529c0      0x180 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_unpack_df.o)
-                0x060529d0                __unpack_d
- .text          0x06052b40       0x30 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_make_sf.o)
-                0x06052b40                __make_fp
- .text          0x06052b70       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_thenan_df.o)
-                0x06052b70                __thenan_df
- .text          0x06052b90      0x5f0 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_pack_df.o)
-                0x06052ba0                __pack_d
- .text          0x06053180       0x30 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_mulsi3.o)
-                0x06053180                __mulsi3
- .text          0x060531b0       0xa0 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(memcpy.o)
-                0x060531b0                memcpy
- .text          0x06053250       0xb0 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(sprintf.o)
-                0x060532a0                sprintf
-                0x06053250                _sprintf_r
- .text          0x06053300       0x80 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(memcmp.o)
-                0x06053300                memcmp
- .text          0x06053380      0x100 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(strncmp.o)
-                0x06053380                strncmp
- .text          0x06053480       0xd0 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(strncpy.o)
-                0x06053480                strncpy
- .text          0x06053550       0x40 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(memset.o)
-                0x06053550                memset
- .text          0x06053590       0x90 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(atexit.o)
-                0x06053590                atexit
- .text          0x06053620     0x1d20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(vfprintf.o)
-                0x060536d8                _vfprintf_r
-                0x06055318                vfprintf
- .text          0x06055340       0x10 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(impure.o)
-                0x06055340                _global_impure_ptr
- .text          0x06055350       0x40 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(malloc.o)
-                0x0605536c                free
-                0x06055350                malloc
- .text          0x06055390      0x300 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(fvwrite.o)
-                0x06055390                __sfvwrite
- .text          0x06055690      0x100 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(locale.o)
-                0x06055758                setlocale
-                0x060556d8                _setlocale_r
-                0x06055734                __locale_charset
-                0x06055778                localeconv
-                0x06055748                _localeconv_r
- .text          0x06055790      0x360 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(freer.o)
-                0x06055790                _malloc_trim_r
-                0x06055878                _free_r
- .text          0x06055af0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(strlen.o)
-                0x06055af0                strlen
- .text          0x06055b10      0x270 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(findfp.o)
-                0x06055c24                __sfp
-                0x06055bac                __sfp_lock_acquire
-                0x06055d54                __fp_unlock_all
-                0x06055c18                __sfp_lock_release
-                0x06055bb8                __sinit
-                0x06055d04                _cleanup
-                0x06055d34                __fp_lock_all
-                0x06055cec                _cleanup_r
-                0x06055b54                __sfmoreglue
- .text          0x06055d80       0xd0 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(fflush.o)
-                0x06055d80                fflush
- .text          0x06055e50       0xf0 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(wsetup.o)
-                0x06055e50                __swsetup
- .text          0x06055f40       0x70 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(wcrtomb.o)
-                0x06055f40                _wcrtomb_r
-                0x06055f8c                wcrtomb
- .text          0x06055fb0       0x40 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(s_isinf.o)
-                0x06055fb0                isinf
- .text          0x06055ff0       0xd0 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(memchr.o)
-                0x06055ff0                memchr
- .text          0x060560c0      0x6a0 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(mallocr.o)
-                0x060560c0                _malloc_r
- .text          0x06056760      0x130 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(wcsrtombs.o)
-                0x06056760                _wcsrtombs_r
-                0x06056854                wcsrtombs
- .text          0x06056890       0x40 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(s_isnan.o)
-                0x06056890                isnan
- .text          0x060568d0     0x1310 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(dtoa.o)
-                0x06056a74                _dtoa_r
- .text          0x06057be0       0xe0 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(memmove.o)
-                0x06057be0                memmove
- .text          0x06057cc0      0x450 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(reallocr.o)
-                0x06057cc0                _realloc_r
- .text          0x06058110       0x30 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(strcmp.o)
-                0x06058110                strcmp
- .text          0x06058140       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(mlock.o)
-                0x06058140                __malloc_lock
-                0x0605814c                __malloc_unlock
- .text          0x06058160       0x50 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(sbrkr.o)
-                0x06058160                _sbrk_r
- .text          0x060581b0      0x170 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(stdio.o)
-                0x06058208                __swrite
-                0x060582f8                __sclose
-                0x060581b0                __sread
-                0x06058298                __sseek
- .text          0x06058320      0x130 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(fclose.o)
-                0x06058320                _fclose_r
-                0x0605842c                fclose
- .text          0x06058450      0x200 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(fwalk.o)
-                0x060585c4                _fwalk_reent
-                0x06058540                _fwalk
- .text          0x06058650      0x150 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(makebuf.o)
-                0x06058650                __smakebuf
- .text          0x060587a0      0x2c0 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(wctomb_r.o)
-                0x060587c0                _wctomb_r
- .text          0x06058a60      0xdc0 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(mprec.o)
-                0x060592a0                __mcmp
-                0x06059724                _ratio
-                0x06058efc                _i2b
-                0x0605949c                _b2d
-                0x06058cf4                _s2b
-                0x06058dcc                _hi0bits
-                0x060590d0                _pow5mult
-                0x060592e4                __mdiff
-                0x060591a8                _lshift
-                0x06058f20                _multiply
-                0x060595f0                _d2b
-                0x06058b78                _Balloc
-                0x06058a60                __mprec_tinytens
-                0x060597b8                _mprec_log10
-                0x06058a88                __mprec_bigtens
-                0x06059404                _ulp
-                0x06058c08                _Bfree
-                0x06058ab0                __mprec_tens
-                0x06058e34                _lo0bits
-                0x06058c28                _multadd
- .text          0x06059820      0x390 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(syscalls.o)
-                0x06059990                _exit
-                0x060599c4                _getpid
-                0x06059a2c                _utime
-                0x06059858                _write
-                0x06059820                _read
-                0x06059978                _unlink
-                0x06059940                _open
-                0x060599dc                _stat
-                0x06059984                isatty
-                0x06059a5c                _wait
-                0x060599a8                _kill
-                0x060599f8                _chmod
-                0x06059a8c                _execv
-                0x06059a70                _execve
-                0x06059b6c                __setup_argv_and_call_main
-                0x06059ac4                _gettimeofday
-                0x0605988c                _link
-                0x060599d0                _raise
-                0x0605995c                _creat
-                0x06059aa4                _pipe
-                0x06059a10                _chown
-                0x0605983c                _lseek
-                0x06059874                _close
-                0x06059ab8                _times
-                0x0605992c                _fstat
-                0x06059a48                _fork
-                0x060598b4                _sbrk
- .text          0x06059bb0       0x50 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(readr.o)
-                0x06059bb0                _read_r
- .text          0x06059c00       0x50 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(writer.o)
-                0x06059c00                _write_r
- .text          0x06059c50       0x50 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(lseekr.o)
-                0x06059c50                _lseek_r
- .text          0x06059ca0       0x50 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(closer.o)
-                0x06059ca0                _close_r
- .text          0x06059cf0       0x50 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(fstatr.o)
-                0x06059cf0                _fstat_r
- .text          0x06059d40       0xa0 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(callocr.o)
-                0x06059d40                _calloc_r
- .text          0x06059de0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(trap.o)
-                0x06059de0                __trap34
- .text          0x06059e00       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(abort.o)
-                0x06059e00                abort
- .text          0x06059e20      0x260 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(signal.o)
-                0x06059edc                _raise_r
-                0x0605a060                __sigtramp
-                0x0605a00c                raise
-                0x0605a048                _init_signal
-                0x06059f98                __sigtramp_r
-                0x0605a028                signal
-                0x06059e6c                _signal_r
-                0x06059e20                _init_signal_r
- .text          0x0605a080       0x60 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(signalr.o)
-                0x0605a0c8                _getpid_r
-                0x0605a080                _kill_r
- .text          0x0605a0e0       0x70 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_eq_df.o)
-                0x0605a0e0                __eqdf2
- .text          0x0605a150       0x70 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_ne_df.o)
-                0x0605a150                __nedf2
- .text          0x0605a1c0       0x70 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_lt_df.o)
-                0x0605a1c0                __ltdf2
- .text          0x0605a230      0x610 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_udivdi3.o)
-                0x0605a230                __udivdi3
- .text          0x0605a840      0x600 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_umoddi3.o)
-                0x0605a840                __umoddi3
- .text          0x0605ae40       0x70 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_gt_df.o)
-                0x0605ae40                __gtdf2
- .text          0x0605aeb0       0x70 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_ge_df.o)
-                0x0605aeb0                __gedf2
- .text          0x0605af20       0xb0 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_fpcmp_parts_df.o)
-                0x0605af20                __fpcmp_parts_d
- .text          0x0605afd0      0x100 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_clz.o)
-                0x0605afd0                __clz_tab
+                0x06044220                jo_main
+                0x0604497c                my_gamepad
+                0x060440c8                init_game
+                0x06044290                next_level
+                0x060446ea                my_draw
+                0x0604404e                load_blop_sound
+                0x060443cc                draw_water
+                0x06044360                restart_game
+ .text          0x06044c20      0x790 ../../jo_engine/tga.o
+                0x06045270                jo_tga_loader_from_stream
+                0x060451a0                jo_sprite_add_tga
+                0x06045310                jo_sprite_add_tga_from_stream
+                0x060450fc                jo_tga_loader
+                0x06044d96                jo_sprite_add_tga_tileset
+                0x06044c5e                __jo_tga_load
+ .text          0x060453b0      0x430 ../../jo_engine/audio.o
+                0x06045414                jo_audio_init
+                0x06045618                jo_audio_usage_percent
+                0x06045686                jo_audio_free_pcm
+                0x060453f4                jo_audio_stop_cd
+                0x060454ae                jo_audio_play_sound_on_channel
+                0x06045582                jo_audio_play_sound
+                0x060456d4                jo_audio_stop_sound
+                0x0604577e                jo_audio_load_pcm
+                0x060453b0                jo_audio_play_cd_track
+                0x060453e8                jo_audio_set_volume
+ .text          0x060457e0      0x9c0 ../../jo_engine/fs.o
+                0x0604609c                jo_fs_seek_forward
+                0x06045ed0                jo_fs_read_file
+                0x06045e5a                jo_fs_set_read_sector_count
+                0x060457fe                jo_fs_init
+                0x06045bf6                jo_fs_open
+                0x060459da                jo_fs_read_file_async
+                0x06045de8                jo_fs_close
+                0x06045d04                jo_fs_read_next_bytes
+                0x06045b44                jo_fs_cd
+                0x06045884                jo_fs_do_background_jobs
+                0x06046028                jo_fs_read_file_in_dir
+ .text          0x060461a0      0x420 ../../jo_engine/storyboard.o
+                0x06046210                jo_execute_storyboards
+                0x060461c0                jo_storyboard_create_animation
+                0x060464ec                jo_storyboard_create
+                0x060461a0                jo_init_storyboards
+                0x06046544                jo_storyboard_destroy
+ .text          0x060465c0      0x570 ../../jo_engine/font.o
+                0x060468cc                jo_font_print_centered
+                0x06046a1a                jo_font_print
+                0x06046636                jo_font_load
+ .text          0x06046b30       0x50 ../../jo_engine/input.o
+                0x06046b30                jo_get_input_type
+ .text          0x06046b80      0x9b0 ../../jo_engine/core.o
+                0x06046ba4                jo_core_wait_for_slave
+                0x06046c3e                jo_core_suspend
+                0x0604713a                jo_core_add_callback
+                0x06046bc4                jo_core_exec_on_slave
+                0x06047444                jo_core_run
+                0x06047012                jo_core_remove_slave_callback
+                0x06046f94                jo_dump_vdp1_registers
+                0x06046bd8                jo_goto_boot_menu
+                0x06047082                jo_core_add_slave_callback
+                0x06046daa                __jo_core_error
+                0x060470e4                jo_core_remove_callback
+                0x06046f20                jo_dump_vdp2_registers
+                0x060471d6                jo_core_init
+                0x06046be4                main
+ .text          0x06047530      0x3c0 ../../jo_engine/math.o
+                0x06047530                jo_random
+                0x0604782c                jo_planar_rotate
+                0x06047764                jo_sqrt
+                0x060477d0                jo_gcd
+                0x060475a4                jo_atan2f_rad
+ .text          0x060478f0      0x400 ../../jo_engine/malloc.o
+                0x06047c6c                jo_memory_fragmentation
+                0x06047b3c                jo_memory_usage_percent
+                0x060478f0                jo_add_memory_zone
+                0x06047aa8                jo_free
+                0x06047984                jo_malloc_with_behaviour
+ .text          0x06047cf0      0x450 ../../jo_engine/tools.o
+                0x060480ac                jo_endwith
+                0x06047f50                jo_getdate
+                0x06047d9a                jo_clear_screen
+                0x06047e52                jo_strlen
+                0x06047d58                jo_get_current_language
+                0x06047de6                jo_tools_atoi
+                0x06047d08                jo_print
+                0x06047e9c                jo_memset
+                0x06047ef0                jo_map_to_vram
+ .text          0x06048140      0x8a0 ../../jo_engine/sprites.o
+                0x060485c8                jo_sprite_usage_percent
+                0x0604881e                jo_sprite_add_8bits_image
+                0x060488d2                jo_sprite_draw
+                0x06048140                jo_get_last_sprite_id
+                0x060481c8                jo_sprite_init
+                0x06048212                jo_sprite_name2id
+                0x060482e2                jo_sprite_draw_rotate
+                0x060484c4                jo_sprite_replace
+                0x06048284                jo_set_gouraud_shading_colors
+                0x0604814c                jo_sprite_free_from
+                0x060482ac                jo_set_gouraud_shading_brightness
+                0x0604887a                jo_sprite_add
+ .text          0x060489e0      0x8e0 ../../jo_engine/map.o
+                0x06049098                jo_map_per_pixel_vertical_collision
+                0x060491e0                jo_map_draw
+                0x060489fe                jo_map_create
+                0x06048b4c                jo_map_add_tile
+                0x06048b70                jo_map_add_animated_tile
+                0x06048d9a                jo_map_load_from_file
+                0x06048c20                jo_map_free
+                0x06048c38                jo_map_move_tiles_by_attribute
+                0x06048ca8                jo_map_hitbox_detection_custom_boundaries
+                0x06048b94                jo_map_draw_background
+ .text          0x060492c0       0xf0 ../../jo_engine/list.o
+                0x060492c0                jo_list_remove
+                0x06049304                jo_list_init
+                0x0604932e                jo_list_add
+ .text          0x060493b0      0x280 ../../jo_engine/sprite_animator.o
+                0x06049608                jo_clear_all_sprite_anim
+                0x0604954c                jo_create_sprite_anim
+                0x0604946e                jo_replace_sprite_anim
+ .text          0x06049630      0x800 ../../jo_engine/image.o
+                0x06049648                jo_free_img
+                0x06049cf2                jo_sprite_add_image_pack
+                0x06049712                __jo_bin_load
+                0x060496a2                jo_replace_color
+                0x06049aa0                jo_sprite_add_bin_from_stream
+                0x0604997e                jo_bin_loader_from_stream
+                0x060497c6                jo_sprite_add_bin_tileset
+                0x06049b40                jo_bin_loader
+                0x06049bd2                jo_sprite_add_bin
+ .text          0x06049e30      0x170 ../../jo_engine/background.o
+                0x06049f50                jo_clear_background
+                0x06049ec0                jo_set_background_sprite
+                0x06049e30                jo_draw_background_line
+ .text          0x06049fa0      0x120 ../../jo_engine/time.o
+                0x0604a08c                jo_time_init
+                0x06049fa0                jo_get_ticks
+ .text          0x0604a0c0      0x238 ../../Compiler/SGL_302j/LIB_COFF/SEGA_SYS.A(sys_exit.o)
+                0x0604a0e0                SYS_Exit
+                0x0604a0c0                sys_version
+ *fill*         0x0604a2f8        0x8 00
+ .text          0x0604a300        0x6 ../../Compiler/SGL_302j/LIB_COFF/SEGA_SYS.A(sys_sub.o)
+                0x0604a300                SYSUB_SetStackptr
+ *fill*         0x0604a306        0xa 00
+ .text          0x0604a310      0x130 ../../Compiler/SGL_302j/LIB_COFF/LIBCD.A(CDC_DRV.O)
+                0x0604a310                CDC_CdPlay
+                0x0604a3dc                CDC_CdSeek
+                0x0604a410                CDC_CdScan
+ .text          0x0604a440      0x3a0 ../../Compiler/SGL_302j/LIB_COFF/LIBCD.A(CDC_CMN.O)
+                0x0604a5e4                CDC_TgetToc
+                0x0604a788                CDC_DataEnd
+                0x0604a4a8                CDC_GetPeriStat
+                0x0604a71c                CDC_DataReady
+                0x0604a6f4                CDC_CdOpen
+                0x0604a670                CDC_CdInit
+                0x0604a634                CDC_GetSes
+                0x0604a490                CDC_GetLastStat
+                0x0604a440                CDC_GetCurStat
+                0x0604a57c                CDC_GetHwInfo
+ .text          0x0604a7e0     0x1adc ../../Compiler/SGL_302j/LIB_COFF/LIBCD.A(GFS.O)
+                0x0604a7e0                gfs_version
+                0x0604ba50                gfs_mngGetNumFile
+                0x0604c1ac                gfs_closeSub
+                0x0604b56c                GFS_SetGmode
+                0x0604b828                GFS_SetErrFunc
+                0x0604b978                gfs_mngSetupFuncTbl
+                0x0604ab38                GFS_Reset
+                0x0604b8a0                gfs_chgRoot
+                0x0604b96c                gfs_aborttrans
+                0x0604bc50                gfs_svrAddHndl
+                0x0604bb00                gfs_mngFreeGrp
+                0x0604b878                GFS_ConvTno
+                0x0604be04                gfs_getRootDir
+                0x0604b854                GFS_GetErrStat
+                0x0604aca8                GFS_Seek
+                0x0604b318                GFS_NwStop
+                0x0604bb0c                gfs_mngTermAccess
+                0x0604abbc                GFS_Open
+                0x0604bab8                GFS_mngAllocGrp
+                0x0604c1f4                gfs_isTaskDone
+                0x0604b018                GFS_Fread
+                0x0604b770                GFS_StartTrans
+                0x0604c16c                gfs_GetFinfo
+                0x0604b9ac                gfs_mngInitWork
+                0x0604ae00                GFS_ByteToSct
+                0x0604bc10                gfs_svrSearchHndl
+                0x0604bf00                gfs_loadRootDir
+                0x0604aa5c                GFS_IdToName
+                0x0604b15c                GFS_NwFread
+                0x0604b6a0                GFS_SetTransPara
+                0x0604b268                GFS_NwCdRead
+                0x0604bd40                gfs_loadVol
+                0x0604b63c                GFS_SetReadPara
+                0x0604ad5c                GFS_Tell
+                0x0604b5d0                GFS_SetTmode
+                0x0604c0d4                GFS_GetFad
+                0x0604b70c                GFS_SetTrFunc
+                0x0604b7bc                GFS_CdMovePickup
+                0x0604a9f8                GFS_NameToId
+                0x0604b430                GFS_NwExecOne
+                0x0604bf88                gfs_flowIn
+                0x0604aeb8                GFS_GetFileInfo
+                0x0604c030                gfs_transData
+                0x0604bc8c                gfs_svrRemoveHndl
+                0x0604b2e0                GFS_NwIsComplete
+                0x0604c1e8                gfs_getGmode
+                0x0604b384                GFS_NwGetStat
+                0x0604bce8                GFS_OpenSub
+                0x0604a990                GFS_SetDir
+                0x0604ae5c                GFS_GetFileSize
+                0x0604af2c                GFS_GetNumCdbuf
+                0x0604c248                gfs_convFinStat
+                0x0604af54                GFS_Load
+                0x0604b0b4                gfs_waitRead
+                0x0604a8e8                GFS_LoadDir
+                0x0604aac8                GFS_GetDirInfo
+                0x0604ac70                GFS_Close
+                0x0604a800                GFS_Init
+                0x0604b400                gfs_recovRdErr
+                0x0604bb90                gfs_mngSetErrCode
+                0x0604b4f0                GFS_NwExecServer
+                0x0604adac                GFS_IsEof
+                0x0604c12c                gfs_SetSct
+ *fill*         0x0604c2bc        0x4 00
+ .text          0x0604c2c0      0x2dc ../../Compiler/SGL_302j/LIB_COFF/LIBCD.A(CDC_REG.O)
+                0x0604c314                CDREG_ClrHirqReq
+                0x0604c2e4                CDC_ClrHirqReq
+                0x0604c394                CDREG_TgetData
+                0x0604c384                CDC_GetMpegPtr
+                0x0604c360                CDC_GetHirqMsk
+                0x0604c2c0                CDC_GetDataPtr
+                0x0604c2d0                CDC_GetHirqReq
+                0x0604c4f0                CDREG_WaitHirq
+                0x0604c374                CDC_SetHirqMsk
+                0x0604c3f0                CDREG_CmdRsp
+                0x0604c324                CDREG_InitHirqReq
+                0x0604c34c                CDREG_SetHirqFlag
+                0x0604c560                CDREG_ReadRsp
+ *fill*         0x0604c59c        0x4 00
+ .text          0x0604c5a0      0x194 ../../Compiler/SGL_302j/LIB_COFF/LIBCD.A(CDC_CFS.O)
+                0x0604c5a0                CDC_ChgDir
+                0x0604c5d4                CDC_ReadDir
+                0x0604c6f8                CDC_AbortFile
+                0x0604c608                CDC_GetFileScope
+                0x0604c668                CDC_TgetFileInfo
+                0x0604c6c4                CDC_ReadFile
+ *fill*         0x0604c734        0xc 00
+ .text          0x0604c740      0x152 ../../Compiler/SGL_302j/LIB_COFF/LIBCD.A(CDC_SUB.O)
+                0x0604c7e8                CDSUB_GetCdstat
+                0x0604c758                CDSUB_UpdCdstat
+                0x0604c828                CDSUB_RspToCdstat
+                0x0604c870                CDSUB_SoftTimer
+                0x0604c740                CDSUB_UpdStatus
+                0x0604c778                CDSUB_CdCmd
+ *fill*         0x0604c892        0xe 00
+ .text          0x0604c8a0      0x8d8 ../../Compiler/SGL_302j/LIB_COFF/LIBCD.A(GFS_CDF.O)
+                0x0604cd94                GFCF_Seek
+                0x0604ce9c                GFCF_GetStat
+                0x0604cd7c                GFCF_Tell
+                0x0604c940                GFCF_Setup
+                0x0604ce48                GFCF_cnvIntlvOfs
+                0x0604c8a0                GFCF_Init
+                0x0604cd34                GFCF_Recover
+                0x0604ca88                GFCF_SetSct
+                0x0604cdac                GFCF_MovePickup
+                0x0604cf70                gfcf_isCdOk
+                0x0604cb40                GFCF_FlowInBuf
+                0x0604cacc                GFCF_GetFileInfo
+                0x0604cc94                GFCF_StopInBuf
+                0x0604cf34                gfcf_getSctSize
+                0x0604d030                gfcf_getPlayRange
+ *fill*         0x0604d178        0x8 00
+ .text          0x0604d180      0x92c ../../Compiler/SGL_302j/LIB_COFF/LIBCD.A(GFS_DIR.O)
+                0x0604d670                gfdr_setNextRec
+                0x0604da70                gfdr_setDirrecCd
+                0x0604d468                gfdr_open
+                0x0604d27c                GFDR_GetAtrDirId
+                0x0604d550                gfdr_readByte
+                0x0604d180                GFDR_SetupDirTbl
+                0x0604d648                gfdr_readLongNM
+                0x0604d6f4                gfdr_readDirEnt
+                0x0604d2ac                GFDR_ChgRoot
+                0x0604d1f4                GFDR_NameToId
+                0x0604d338                gfdr_setupDirIdTbl
+                0x0604d294                GFDR_GetAtrDirName
+                0x0604d254                GFDR_GetInfoDirId
+                0x0604d5fc                gfdr_readLongNB
+                0x0604d490                gfdr_read
+                0x0604d57c                gfdr_readWord
+                0x0604d3bc                gfdr_setupDirNameTbl
+                0x0604d268                GFDR_GetInfoDirName
+                0x0604d2c4                GFDR_ChgDir
+                0x0604d5a8                gfdr_readWordNB
+ *fill*         0x0604daac        0x4 00
+ .text          0x0604dab0      0x9c6 ../../Compiler/SGL_302j/LIB_COFF/LIBCD.A(GFS_TRN.O)
+                0x0604db90                GFTR_SetTransMax
+                0x0604df60                gftr_execScu
+                0x0604e464                GFTR_SetTransFunc
+                0x0604e32c                gftr_remTrn
+                0x0604e450                GFTR_SetData
+                0x0604e150                gftr_execSdma1
+                0x0604e3a0                gftr_copyFrac
+                0x0604db84                GFTR_GetNumTrans
+                0x0604db24                GFTR_SetMode
+                0x0604e120                gftr_remDma0
+                0x0604e3c8                GFTR_GetLenData
+                0x0604df54                gftr_reqScu
+                0x0604e138                gftr_reqDma1
+                0x0604de70                gftr_getSrcPack
+                0x0604e420                GFTR_RtnDstPk
+                0x0604e03c                gfdma_exec
+                0x0604e254                gftr_execTrn
+                0x0604dd68                GFTR_ExecSvr
+                0x0604e1e4                gftr_reqTrn
+                0x0604e0ac                gfdma_getBytecnt
+                0x0604e18c                gftr_reqCpu
+                0x0604e3ec                GFTR_GetDstPack
+                0x0604e0e4                gftr_reqDma0
+                0x0604dcf0                GFTR_Idle
+                0x0604dba8                GFTR_Pause
+                0x0604db78                GFTR_GetTransPara
+                0x0604e1d8                gftr_remCpu
+                0x0604db44                GFTR_SetTransPara
+                0x0604e174                gftr_remDma1
+                0x0604dbb4                GFTR_Stop
+                0x0604e0fc                gftr_execSdma0
+                0x0604dae0                GFTR_Setup
+                0x0604dffc                gftr_remScu
+                0x0604def8                gftr_getDstPack
+                0x0604e030                gfdma_canUse
+                0x0604dc6c                GFTR_Exec
+                0x0604e43c                GFTR_GetData
+                0x0604db9c                GFTR_Start
+                0x0604db38                GFTR_SetUnit
+                0x0604e198                gftr_execCpu
+                0x0604e3d4                GFTR_GetLenRoom
+ *fill*         0x0604e476        0xa 00
+ .text          0x0604e480      0x106 ../../Compiler/SGL_302j/LIB_COFF/LIBCD.A(GFS_BUF.O)
+                0x0604e4d8                GFBF_GetNumData
+                0x0604e554                GFBF_RtnPk
+                0x0604e508                GFBF_GetSrcPk
+                0x0604e57c                gfbf_getSctDt
+                0x0604e4b0                GFBF_GetTranData
+                0x0604e530                GFBF_GetSctData
+ *fill*         0x0604e586        0xa 00
+ .text          0x0604e590      0x600 ../../Compiler/SGL_302j/LIB_COFF/LIBCD.A(GFS_CDB.O)
+                0x0604eb38                GFCB_GetPickup
+                0x0604e6b0                GFCB_Close
+                0x0604e97c                GFCB_GetSrcPack
+                0x0604eb04                GFCB_SetCon
+                0x0604e784                GFCB_GetLenRoom
+                0x0604eae8                GFCB_MovePickup
+                0x0604ea5c                GFCB_GetSctData
+                0x0604e790                GFCB_SetFilt
+                0x0604e6d8                GFCB_GetLenData
+                0x0604eb78                GFCB_UngetPickup
+                0x0604e590                GFCB_Setup
+                0x0604e820                GFCB_Tell
+                0x0604eb60                GFCB_IsPuOwner
+                0x0604e880                GFCB_Seek
+                0x0604e7f8                GFCB_DeleteAllData
+                0x0604ea94                GFCB_GetDstPack
+                0x0604e830                gfcb_getSctNum
+                0x0604eaa0                GFCB_RtnPk
+ .text          0x0604eb90     0x1a10 ../../Compiler/SGL_302j/LIB_COFF/LIBCD.A(GFS_CDC.O)
+                0x0604ee2c                GFCD_AllocBuf
+                0x0604fc14                gfcd_doGetLenDataTsk
+                0x060504b0                GFCD_SetCsctFunc
+                0x0604ef04                GFCD_GetBaseFad
+                0x0604f080                GFCD_GetFilt
+                0x060500a0                gfcd_doChgDirTsk
+                0x060503e0                gfcd_checkEflag
+                0x0604f3c8                GFCD_MovePickup
+                0x0604f4ac                GFCD_GetSctInfo
+                0x0604fd68                gfcd_doReqDataTsk
+                0x0604f4f4                GFCD_ChgDir
+                0x0604f1e8                GFCD_ReqData
+                0x060504cc                GFCD_ChkScdqFlag
+                0x0604f984                GFCD_WaitServer
+                0x0604f28c                GFCD_DelSctData
+                0x0604f764                GFCD_ExecServer
+                0x0604fb84                gfcd_doSetConTsk
+                0x0604edc0                GFCD_AllocFilt
+                0x0604efbc                GFCD_SetFilt
+                0x0604f9c0                gfcd_doSetFiltTsk
+                0x060504f0                GFCD_ClrScdqFlag
+                0x0604fe08                gfcd_doDelSctDataTsk
+                0x0604f8c4                gfcd_doTask
+                0x0604ef38                GFCD_GetPickup
+                0x0604f488                GFCD_CheckMove
+                0x0605050c                GFCD_WaitScdqFlag
+                0x0604f120                GFCD_Play
+                0x0604ff3c                gfcd_doMoveSctTsk
+                0x0604f0c8                GFCD_SetCon
+                0x0604f568                GFCD_SetFiltCon
+                0x06050550                GFCD_WaitPause
+                0x0604f72c                GFCD_GetBufSiz
+                0x0604ef6c                GFCD_UngetPickup
+                0x0604f650                GFCD_GetFileInfo
+                0x0604f244                GFCD_EndData
+                0x0604ee60                GFCD_FreeBuf
+                0x0604f180                GFCD_GetLenData
+                0x0604edfc                GFCD_FreeFilt
+                0x0604f838                gfcd_isIdleTask
+                0x0604ebbc                GFCD_Init
+                0x0605029c                gfcd_doSetFiltConTsk
+                0x0604f314                GFCD_GetStat
+                0x0604f414                GFCD_MoveSctData
+                0x0604ef98                GFCD_IsPuOwner
+                0x06050404                gfcd_initCdbMng
+                0x0604eb90                GFCD_SetCdbfs
+                0x0604f970                GFCD_SetTimer
+                0x06050484                gfcd_setStat
+                0x0604f2e4                GFCD_CheckDelSctData
+ .text          0x060505a0      0x1e4 ../../Compiler/SGL_302j/LIB_COFF/LIBCD.A(CDC_BIO.O)
+                0x0605064c                CDC_GetdelSctData
+                0x060505d4                CDC_GetSctData
+                0x06050688                CDC_PutSctData
+                0x06050704                CDC_MoveSctData
+                0x06050748                CDC_GetCopyErr
+                0x06050610                CDC_DelSctData
+                0x060505a0                CDC_SetSctLen
+                0x060506c0                CDC_CopySctData
+ *fill*         0x06050784        0xc 00
+ .text          0x06050790      0x2b8 ../../Compiler/SGL_302j/LIB_COFF/LIBCD.A(CDC_SEL.O)
+                0x060509c0                CDC_GetFiltCon
+                0x0605093c                CDC_GetFiltMode
+                0x06050a14                CDC_ResetSelector
+                0x06050790                CDC_SetFiltRange
+                0x0605081c                CDC_SetFiltSubh
+                0x0605088c                CDC_GetFiltSubh
+                0x060507c4                CDC_GetFiltRange
+                0x06050908                CDC_SetFiltMode
+                0x06050980                CDC_SetFiltCon
+ *fill*         0x06050a48        0x8 00
+ .text          0x06050a50      0x270 ../../Compiler/SGL_302j/LIB_COFF/LIBCD.A(CDC_BIF.O)
+                0x06050aac                CDC_GetSctNum
+                0x06050c2c                CDC_ExeFadSearch
+                0x06050bac                CDC_GetSctInfo
+                0x06050af0                CDC_CalActSiz
+                0x06050a50                CDC_GetBufSiz
+                0x06050b2c                CDC_GetActSiz
+                0x06050c64                CDC_GetFadSearch
+ .text          0x06050cc0       0xa8 ../../Compiler/SGL_302j/LIB_COFF/LIBCD.A(CDC_DEV.O)
+                0x06050d2c                CDC_CdGetLastBuf
+                0x06050cc0                CDC_CdSetCon
+                0x06050cf0                CDC_CdGetCon
+ *fill*         0x06050d68        0x8 00
+ .text          0x06050d70      0x128 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglIc0.o)
+                0x06050d70                slInitSystem
+ *fill*         0x06050e98        0x8 00
+ .text          0x06050ea0       0x90 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_si_to_sf.o)
+                0x06050ea0                __floatsisf
+ .text          0x06050f30      0x170 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_mul_sf.o)
+                0x06050f30                __mulsf3
+ .text          0x060510a0       0xa0 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_sf_to_si.o)
+                0x060510a0                __fixsfsi
+ .text          0x06051140       0x70 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_udivsi3.o)
+                0x06051162                __udivsi3
+ .text          0x060511b0       0x60 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_ashiftrt.o)
+                0x060511bc                __ashiftrt_r4_27
+                0x060511f0                __ashiftrt_r4_6
+                0x060511e0                __ashiftrt_r4_14
+                0x060511d2                __ashiftrt_r4_19
+                0x060511ea                __ashiftrt_r4_9
+                0x060511fe                __ashiftrt_r4_0
+                0x060511b0                __ashiftrt_r4_31
+                0x060511be                __ashiftrt_r4_26
+                0x060511cc                __ashiftrt_r4_22
+                0x060511d8                __ashiftrt_r4_16
+                0x060511e4                __ashiftrt_r4_12
+                0x060511b8                __ashiftrt_r4_29
+                0x060511d6                __ashiftrt_r4_17
+                0x060511b6                __ashiftrt_r4_30
+                0x060511f2                __ashiftrt_r4_5
+                0x060511ec                __ashiftrt_r4_8
+                0x060511b0                __ashiftrt_r4_32
+                0x060511c0                __ashiftrt_r4_25
+                0x060511f8                __ashiftrt_r4_2
+                0x060511c2                __ashiftrt_r4_24
+                0x060511de                __ashiftrt_r4_15
+                0x060511e8                __ashiftrt_r4_10
+                0x060511fa                __ashiftrt_r4_1
+                0x060511ba                __ashiftrt_r4_28
+                0x060511d0                __ashiftrt_r4_20
+                0x060511ee                __ashiftrt_r4_7
+                0x060511e2                __ashiftrt_r4_13
+                0x060511e6                __ashiftrt_r4_11
+                0x060511f4                __ashiftrt_r4_4
+                0x060511ca                __ashiftrt_r4_23
+                0x060511d4                __ashiftrt_r4_18
+                0x060511ce                __ashiftrt_r4_21
+                0x060511f6                __ashiftrt_r4_3
+ .text          0x06051210       0xa0 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(__main.o)
+                0x06051284                __main
+                0x06051210                __do_global_dtors
+                0x06051244                __do_global_ctors
+ .text          0x060512b0       0xa0 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_sdivsi3.o)
+                0x060512b0                __sdivsi3
+ .text          0x06051350       0x70 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_le_sf.o)
+                0x06051350                __lesf2
+ .text          0x060513c0       0x70 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_ge_sf.o)
+                0x060513c0                __gesf2
+ .text          0x06051430       0x70 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_gt_sf.o)
+                0x06051430                __gtsf2
+ .text          0x060514a0      0x120 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_div_sf.o)
+                0x060514a0                __divsf3
+ .text          0x060515c0       0x70 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_lt_sf.o)
+                0x060515c0                __ltsf2
+ .text          0x06051630      0x250 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_addsub_sf.o)
+                0x060517c4                __subsf3
+                0x06051824                __addsf3
+ .text          0x06051880      0x100 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_sf_to_df.o)
+                0x06051880                __extendsfdf2
+ .text          0x06051980       0x70 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_df_to_sf.o)
+                0x06051980                __truncdfsf2
+ .text          0x060519f0      0x350 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_addsub_df.o)
+                0x06051c7c                __subdf3
+                0x06051ce0                __adddf3
+ .text          0x06051d40       0x90 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_lshiftrt.o)
+                0x06051d40                __lshrsi3
+ .text          0x06051dd0       0xb0 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_si_to_df.o)
+                0x06051dd0                __floatsidf
+ .text          0x06051e80      0x3b0 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_mul_df.o)
+                0x06051e90                __muldf3
+ .text          0x06052230      0x1b0 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_div_df.o)
+                0x06052238                __divdf3
+ .text          0x060523e0      0x100 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_df_to_si.o)
+                0x060523e0                __fixdfsi
+ .text          0x060524e0       0x90 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_ashiftrt_n.o)
+                0x060524e0                __ashrsi3
+ .text          0x06052570       0x90 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_ashiftlt.o)
+                0x06052570                __ashlsi3
+ .text          0x06052600      0x1c0 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_pack_sf.o)
+                0x06052600                __pack_f
+ .text          0x060527c0       0xc0 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_unpack_sf.o)
+                0x060527c0                __unpack_f
+ .text          0x06052880       0xd0 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_muldi3.o)
+                0x06052880                __muldi3
+ .text          0x06052950       0x10 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_thenan_sf.o)
+                0x06052950                __thenan_sf
+ .text          0x06052960       0xa0 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_fpcmp_parts_sf.o)
+                0x06052960                __fpcmp_parts_f
+ .text          0x06052a00       0x30 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_make_df.o)
+                0x06052a00                __make_dp
+ .text          0x06052a30      0x180 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_unpack_df.o)
+                0x06052a40                __unpack_d
+ .text          0x06052bb0       0x30 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_make_sf.o)
+                0x06052bb0                __make_fp
+ .text          0x06052be0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_thenan_df.o)
+                0x06052be0                __thenan_df
+ .text          0x06052c00      0x5f0 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_pack_df.o)
+                0x06052c10                __pack_d
+ .text          0x060531f0       0x30 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_mulsi3.o)
+                0x060531f0                __mulsi3
+ .text          0x06053220       0xa0 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(memcpy.o)
+                0x06053220                memcpy
+ .text          0x060532c0       0xb0 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(sprintf.o)
+                0x06053310                sprintf
+                0x060532c0                _sprintf_r
+ .text          0x06053370       0x80 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(memcmp.o)
+                0x06053370                memcmp
+ .text          0x060533f0      0x100 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(strncmp.o)
+                0x060533f0                strncmp
+ .text          0x060534f0       0xd0 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(strncpy.o)
+                0x060534f0                strncpy
+ .text          0x060535c0       0x40 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(memset.o)
+                0x060535c0                memset
+ .text          0x06053600       0x90 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(atexit.o)
+                0x06053600                atexit
+ .text          0x06053690     0x1d20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(vfprintf.o)
+                0x06053748                _vfprintf_r
+                0x06055388                vfprintf
+ .text          0x060553b0       0x10 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(impure.o)
+                0x060553b0                _global_impure_ptr
+ .text          0x060553c0       0x40 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(malloc.o)
+                0x060553dc                free
+                0x060553c0                malloc
+ .text          0x06055400      0x300 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(fvwrite.o)
+                0x06055400                __sfvwrite
+ .text          0x06055700      0x100 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(locale.o)
+                0x060557c8                setlocale
+                0x06055748                _setlocale_r
+                0x060557a4                __locale_charset
+                0x060557e8                localeconv
+                0x060557b8                _localeconv_r
+ .text          0x06055800      0x360 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(freer.o)
+                0x06055800                _malloc_trim_r
+                0x060558e8                _free_r
+ .text          0x06055b60       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(strlen.o)
+                0x06055b60                strlen
+ .text          0x06055b80      0x270 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(findfp.o)
+                0x06055c94                __sfp
+                0x06055c1c                __sfp_lock_acquire
+                0x06055dc4                __fp_unlock_all
+                0x06055c88                __sfp_lock_release
+                0x06055c28                __sinit
+                0x06055d74                _cleanup
+                0x06055da4                __fp_lock_all
+                0x06055d5c                _cleanup_r
+                0x06055bc4                __sfmoreglue
+ .text          0x06055df0       0xd0 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(fflush.o)
+                0x06055df0                fflush
+ .text          0x06055ec0       0xf0 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(wsetup.o)
+                0x06055ec0                __swsetup
+ .text          0x06055fb0       0x70 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(wcrtomb.o)
+                0x06055fb0                _wcrtomb_r
+                0x06055ffc                wcrtomb
+ .text          0x06056020       0x40 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(s_isinf.o)
+                0x06056020                isinf
+ .text          0x06056060       0xd0 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(memchr.o)
+                0x06056060                memchr
+ .text          0x06056130      0x6a0 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(mallocr.o)
+                0x06056130                _malloc_r
+ .text          0x060567d0      0x130 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(wcsrtombs.o)
+                0x060567d0                _wcsrtombs_r
+                0x060568c4                wcsrtombs
+ .text          0x06056900       0x40 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(s_isnan.o)
+                0x06056900                isnan
+ .text          0x06056940     0x1310 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(dtoa.o)
+                0x06056ae4                _dtoa_r
+ .text          0x06057c50       0xe0 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(memmove.o)
+                0x06057c50                memmove
+ .text          0x06057d30      0x450 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(reallocr.o)
+                0x06057d30                _realloc_r
+ .text          0x06058180       0x30 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(strcmp.o)
+                0x06058180                strcmp
+ .text          0x060581b0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(mlock.o)
+                0x060581b0                __malloc_lock
+                0x060581bc                __malloc_unlock
+ .text          0x060581d0       0x50 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(sbrkr.o)
+                0x060581d0                _sbrk_r
+ .text          0x06058220      0x170 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(stdio.o)
+                0x06058278                __swrite
+                0x06058368                __sclose
+                0x06058220                __sread
+                0x06058308                __sseek
+ .text          0x06058390      0x130 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(fclose.o)
+                0x06058390                _fclose_r
+                0x0605849c                fclose
+ .text          0x060584c0      0x200 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(fwalk.o)
+                0x06058634                _fwalk_reent
+                0x060585b0                _fwalk
+ .text          0x060586c0      0x150 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(makebuf.o)
+                0x060586c0                __smakebuf
+ .text          0x06058810      0x2c0 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(wctomb_r.o)
+                0x06058830                _wctomb_r
+ .text          0x06058ad0      0xdc0 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(mprec.o)
+                0x06059310                __mcmp
+                0x06059794                _ratio
+                0x06058f6c                _i2b
+                0x0605950c                _b2d
+                0x06058d64                _s2b
+                0x06058e3c                _hi0bits
+                0x06059140                _pow5mult
+                0x06059354                __mdiff
+                0x06059218                _lshift
+                0x06058f90                _multiply
+                0x06059660                _d2b
+                0x06058be8                _Balloc
+                0x06058ad0                __mprec_tinytens
+                0x06059828                _mprec_log10
+                0x06058af8                __mprec_bigtens
+                0x06059474                _ulp
+                0x06058c78                _Bfree
+                0x06058b20                __mprec_tens
+                0x06058ea4                _lo0bits
+                0x06058c98                _multadd
+ .text          0x06059890      0x390 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(syscalls.o)
+                0x06059a00                _exit
+                0x06059a34                _getpid
+                0x06059a9c                _utime
+                0x060598c8                _write
+                0x06059890                _read
+                0x060599e8                _unlink
+                0x060599b0                _open
+                0x06059a4c                _stat
+                0x060599f4                isatty
+                0x06059acc                _wait
+                0x06059a18                _kill
+                0x06059a68                _chmod
+                0x06059afc                _execv
+                0x06059ae0                _execve
+                0x06059bdc                __setup_argv_and_call_main
+                0x06059b34                _gettimeofday
+                0x060598fc                _link
+                0x06059a40                _raise
+                0x060599cc                _creat
+                0x06059b14                _pipe
+                0x06059a80                _chown
+                0x060598ac                _lseek
+                0x060598e4                _close
+                0x06059b28                _times
+                0x0605999c                _fstat
+                0x06059ab8                _fork
+                0x06059924                _sbrk
+ .text          0x06059c20       0x50 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(readr.o)
+                0x06059c20                _read_r
+ .text          0x06059c70       0x50 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(writer.o)
+                0x06059c70                _write_r
+ .text          0x06059cc0       0x50 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(lseekr.o)
+                0x06059cc0                _lseek_r
+ .text          0x06059d10       0x50 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(closer.o)
+                0x06059d10                _close_r
+ .text          0x06059d60       0x50 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(fstatr.o)
+                0x06059d60                _fstat_r
+ .text          0x06059db0       0xa0 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(callocr.o)
+                0x06059db0                _calloc_r
+ .text          0x06059e50       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(trap.o)
+                0x06059e50                __trap34
+ .text          0x06059e70       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(abort.o)
+                0x06059e70                abort
+ .text          0x06059e90      0x260 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(signal.o)
+                0x06059f4c                _raise_r
+                0x0605a0d0                __sigtramp
+                0x0605a07c                raise
+                0x0605a0b8                _init_signal
+                0x0605a008                __sigtramp_r
+                0x0605a098                signal
+                0x06059edc                _signal_r
+                0x06059e90                _init_signal_r
+ .text          0x0605a0f0       0x60 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(signalr.o)
+                0x0605a138                _getpid_r
+                0x0605a0f0                _kill_r
+ .text          0x0605a150       0x70 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_eq_df.o)
+                0x0605a150                __eqdf2
+ .text          0x0605a1c0       0x70 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_ne_df.o)
+                0x0605a1c0                __nedf2
+ .text          0x0605a230       0x70 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_lt_df.o)
+                0x0605a230                __ltdf2
+ .text          0x0605a2a0      0x610 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_udivdi3.o)
+                0x0605a2a0                __udivdi3
+ .text          0x0605a8b0      0x600 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_umoddi3.o)
+                0x0605a8b0                __umoddi3
+ .text          0x0605aeb0       0x70 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_gt_df.o)
+                0x0605aeb0                __gtdf2
+ .text          0x0605af20       0x70 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_ge_df.o)
+                0x0605af20                __gedf2
+ .text          0x0605af90       0xb0 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_fpcmp_parts_df.o)
+                0x0605af90                __fpcmp_parts_d
+ .text          0x0605b040      0x100 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_clz.o)
+                0x0605b040                __clz_tab
  *(.strings)
-                0x0605b0d0                __etext = .
+                0x0605b140                __etext = .
 
 .rodata
  *(.rodata)
 
-SLPROG          0x0605b0e0    0x10880
-                0x0605b0e0                __slprog_start = .
+SLPROG          0x0605b140    0x10880
+                0x0605b140                __slprog_start = .
  *(SLPROG)
- SLPROG         0x0605b0e0     0x6540 ../../Compiler/SGL_302j/LIB_COFF/SGLAREA.O
-                0x0605b0fc                SpriteBuf
-                0x0605b120                RemainEvent
-                0x0605b0ec                SortList
-                0x0605b0ea                MaxPolygons
-                0x0605b108                CommandBuf
-                0x0605b11c                MaxWorks
-                0x0605b11e                WorkSize
-                0x0605b114                PCM_WkSize
-                0x0605b10c                CLOfstBuf
-                0x0605b220                RemainWork
-                0x0605b110                PCM_Work
-                0x0605b0e0                MasterStack
-                0x0605b0e4                SlaveStack
-                0x0605b0e8                MaxVertices
-                0x0605b118                MaxEvents
-                0x0605b0f8                Zbuffer
-                0x0605b100                SpriteBufSize
-                0x0605d620                WorkBuf
-                0x0605b0f4                TransList
-                0x0605b104                Pbuffer
-                0x0605b0f0                SortListSize
-                0x0605b11a                EventSize
-                0x0605b620                EventBuf
- SLPROG         0x06061620      0xfc8 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglH00.o)
-                0x060616bc                slSetPortData1
-                0x060616ac                slGetPortData1
-                0x06061e9a                slSetPortMode1
-                0x060620d4                Smpc_Status
-                0x06061672                slSetPortDir2
-                0x06061cb8                slSmpcCashSend
-                0x060616d8                slGetPortSelect1
-                0x06061abe                slIntBackCancel
-                0x06061770                slSetPortExt1
-                0x06061e80                slGetPortMode1
-                0x06061d74                slSmpcCashBlow
-                0x06062064                slRequestCommand
-                0x06062104                SmpcStatusBuf
-                0x060616c6                slSetPortData2
-                0x06061a26                slSetResultBuffer
-                0x0606175c                slGetPortExt1
-                0x060617a0                slSetPortExt2
-                0x06061640                slGetPortDir2
-                0x06061766                slGetPortExt2
-                0x06061af2                slClearReset
-                0x06061ae8                slCheckReset
-                0x06061648                slSetPortDir1
-                0x06061720                slSetPortSelect2
-                0x060616ec                slSetPortSelect1
-                0x06061e8c                slGetPortMode2
-                0x060616e2                slGetPortSelect2
-                0x06061638                slGetPortDir1
-                0x060616b4                slGetPortData2
-                0x06061e5a                slSetOptimize
-                0x06061e50                slGetOptimize
-                0x06061914                slSmpcDirectAccess
-                0x060620e2                Per_Connect1
-                0x06061994                slInitPeripheral
-                0x06061ab2                slCheckIntBackSet
-                0x060620e3                Per_Connect2
-                0x060620dc                Smpc_Peripheral
-                0x06061ed8                slSetPortMode2
-                0x060620d8                Smpc_Result
- *fill*         0x060625e8        0x8 00
- SLPROG         0x060625f0       0x18 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglG01.o)
-                0x060625f0                slSndVolume
- *fill*         0x06062608        0x8 00
- SLPROG         0x06062610      0x1d0 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglG00.o)
-                0x06062610                slInitSound
-                0x0606272c                slSndFlush
-                0x06062714                slWaitSound
- SLPROG         0x060627e0       0x4c ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglG19.o)
-                0x060627e0                slCDDAOn
- *fill*         0x0606282c        0x4 00
- SLPROG         0x06062830       0x18 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglG25.o)
-                0x06062830                slPCMStat
- *fill*         0x06062848        0x8 00
- SLPROG         0x06062850      0x1e0 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglG21.o)
-                0x06062858                slPCMOn
-                0x06062976                slSndPCMNum
- SLPROG         0x06062a30       0x48 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglG22.o)
-                0x06062a30                slPCMOff
- *fill*         0x06062a78        0x8 00
- SLPROG         0x06062a80       0x84 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglD00.o)
-                0x06062a80                slDMACopy
-                0x06062a80                slCpuDMACopy
-                0x06062ada                slCashPurge
-                0x06062ada                CSH_AllClr
- *fill*         0x06062b04        0xc 00
- SLPROG         0x06062b10       0x18 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglA15.o)
-                0x06062b10                slSlaveFunc
- *fill*         0x06062b28        0x8 00
- SLPROG         0x06062b30      0x3a4 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglI01.o)
-                0x06062d1a                RetPCMBuf
-                0x06062e54                Sound_Buf
-                0x06062b30                slInitSynch
-                0x06062c40                slRandom
-                0x06062db4                PCM_Buf
-                0x06062b4a                slSynch
-                0x06062c5e                PCM_EndCheck
- *fill*         0x06062ed4        0xc 00
- SLPROG         0x06062ee0       0x4e ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglF00.o)
-                0x06062efa                slLocate
-                0x06062ef0                slCurColor
-                0x06062f2c                CurrentScreen
-                0x06062ee0                slCurScrn
- *fill*         0x06062f2e        0x2 00
- SLPROG         0x06062f30       0x20 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglB001.o)
-                0x06062f30                slTVOn
-                0x06062f3a                slTVOff
- SLPROG         0x06062f50        0xc ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglB063.o)
-                0x06062f50                slPriority
- *fill*         0x06062f5c        0x4 00
- SLPROG         0x06062f60        0xc ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglB016.o)
-                0x06062f60                slBack1ColSet
- *fill*         0x06062f6c        0x4 00
- SLPROG         0x06062f70      0x114 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglB200.o)
-                0x06062f7c                slCharNbg0
-                0x06062fc2                slPageRbg0
-                0x06062fd8                slPageNbg1
-                0x06062f88                slCharNbg1
-                0x06062ff4                slPageNbg0
-                0x06062fe0                slPageNbg2
-                0x06062fe8                slPageNbg3
-                0x06062f94                slCharNbg2
-                0x06062faa                slCharNbg3
-                0x06062f70                slCharRbg0
- *fill*         0x06063084        0xc 00
- SLPROG         0x06063090        0xc ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglB056.o)
-                0x06063090                slPlaneNbg1
- *fill*         0x0606309c        0x4 00
- SLPROG         0x060630a0       0xb4 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglB032.o)
-                0x060630a0                slMapNbg1
- *fill*         0x06063154        0xc 00
- SLPROG         0x06063160       0x24 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglB011.o)
-                0x06063160                slBitMapNbg1
- *fill*         0x06063184        0xc 00
- SLPROG         0x06063190        0xc ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglB053.o)
-                0x06063190                slZoomNbg1
- *fill*         0x0606319c        0x4 00
- SLPROG         0x060631a0      0x40c ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglB015.o)
-                0x060631a0                slScrAutoDisp
- *fill*         0x060635ac        0x4 00
- SLPROG         0x060635b0       0x1c ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglF05.o)
-                0x060635b0                slPrint
- *fill*         0x060635cc        0x4 00
- SLPROG         0x060635d0       0xa8 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglH01.o)
-                0x06063630                slSetSoundOutput
-                0x06063608                slSetSoundEffect
-                0x060635fc                slGetSoundEffect
-                0x06063624                slGetSoundOutput
-                0x0606364c                slGetHelpWindow
-                0x060635d0                slGetLanguage
-                0x060635da                slSetLanguage
-                0x06063658                slSetHelpWindow
- *fill*         0x06063678        0x8 00
- SLPROG         0x06063680      0x162 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglC07.o)
-                0x06063686                slPutSprite
- *fill*         0x060637e2        0xe 00
- SLPROG         0x060637f0       0xfa ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglC06.o)
-                0x060637f0                slDispSprite
- *fill*         0x060638ea        0x6 00
- SLPROG         0x060638f0       0x84 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglD16.o)
-                0x06063938                DMA_SCU_PRM0
-                0x060638f0                DMA_ScuSetPrm
- *fill*         0x06063974        0xc 00
- SLPROG         0x06063980       0x88 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglD17.o)
-                0x06063980                DMA_ScuStart
- *fill*         0x06063a08        0x8 00
- SLPROG         0x06063a10       0x20 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglD15.o)
-                0x06063a10                CSH_Purge
- SLPROG         0x06063a30       0x34 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglD18.o)
-                0x06063a30                DMA_ScuGetStatus
- *fill*         0x06063a64        0xc 00
- SLPROG         0x06063a70       0xa0 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglD01.o)
-                0x06063a70                slDMAXCopy
- SLPROG         0x06063b10        0xc ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglD03.o)
-                0x06063b10                slDMAStatus
- *fill*         0x06063b1c        0x4 00
- SLPROG         0x06063b20      0x470 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglH02.o)
-                0x06063f10                smpc_pfr_tbl
-                0x06063f50                smpc_ptf_tbl
- SLPROG         0x06063f90       0x60 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglH04.o)
-                0x06063fba                slComPrmSetTime
-                0x06063f90                slComPrmIntBack
-                0x06063fa4                slComPrmSetMemory
- SLPROG         0x06063ff0       0x10 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglD02.o)
-                0x06063ff0                slDMAWait
- SLPROG         0x06064000       0x20 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglA00.o)
-                0x06064014                get_imask
-                0x06064000                set_imask
-                0x06064000                _builtin_set_imask
-                0x06064014                _builtin_get_imask
- SLPROG         0x06064020       0x74 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglJ00.o)
-                0x06064020                InitSlaveSH
-                0x06064088                SlaveCommand
- *fill*         0x06064094        0xc 00
- SLPROG         0x060640a0      0x42c ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglA20.o)
-                0x060640a0                slInitMatrix
-                0x060640be                slUnitMatrix
-                0x060640aa                slPushUnitMatrix
- *fill*         0x060644cc        0x4 00
- SLPROG         0x060644d0      0xbd0 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglB000.o)
-                0x060644d0                slInitScroll
-                0x06064730                TVSizeTbl
-                0x06064620                setASC_4to8
-                0x060647b0                TVModeTbl
-                0x060645f0                setASC_1to8
-                0x06064988                SGL_ASCII_CG
- SLPROG         0x060650a0      0x3d0 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglJ01.o)
-                0x060650a0                SlaveControl
-                0x0606545c                ErasePolygonData
- SLPROG         0x06065470      0x75c ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglI00.o)
-                0x06065760                slInitInterrupt
- *fill*         0x06065bcc        0x4 00
- SLPROG         0x06065bd0      0x134 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglC00.o)
-                0x06065bd0                slInitSprite
- *fill*         0x06065d04        0xc 00
- SLPROG         0x06065d10       0xd4 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglB035.o)
-                0x06065d10                sl1MapRA
-                0x06065da2                rbank_set
- *fill*         0x06065de4        0xc 00
- SLPROG         0x06065df0     0x411e ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglA01.o)
-                0x06065ecc                sin_cos_index_tbl
-                0x06065df0                slSin
-                0x06065f0c                sin_tbl
-                0x06065e38                GetSinCos
-                0x06065e14                slCos
- *fill*         0x06069f0e        0x2 00
- SLPROG         0x06069f10       0x40 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglC20.o)
-                0x06069f10                SpriteEntry
- SLPROG         0x06069f50      0x140 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglJ03.o)
-                0x06069f50                sbMakeDMATable
- SLPROG         0x0606a090     0x12b8 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglJ02.o)
-                0x0606b2c4                stvtc_1
-                0x0606affc                stvtc_4
-                0x0606afbc                SetPolygon
-                0x0606b0b4                stvtc_3
-                0x0606b2ec                stvtc_0
-                0x0606afc4                SetPosition
-                0x0606a278                sbCalcPolygon
-                0x0606afb0                SetTexture
-                0x0606a090                sbMakePolygon
-                0x0606b2d8                stvtc_2
- *fill*         0x0606b348        0x8 00
- SLPROG         0x0606b350      0x470 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglJ04.o)
-                0x0606b414                sbMakeRotSprite
-                0x0606b3ae                sbMakeSprite
- SLPROG         0x0606b7c0       0x3c ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglJ05.o)
-                0x0606b7c0                sbSortEntry
- *fill*         0x0606b7fc        0x4 00
- SLPROG         0x0606b800       0xf0 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglH03.o)
-                0x0606b864                slSmpcIntBack
- SLPROG         0x0606b8f0       0x6a ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglM01.o)
-                0x0606b91c                slSetDepthTbl
-                0x0606b94c                DepthWorkArea
-                0x0606b8f0                slSetDepthLimit
-                0x0606b95a                __slprog_end = .
+ SLPROG         0x0605b140     0x6540 ../../Compiler/SGL_302j/LIB_COFF/SGLAREA.O
+                0x0605b15c                SpriteBuf
+                0x0605b180                RemainEvent
+                0x0605b14c                SortList
+                0x0605b14a                MaxPolygons
+                0x0605b168                CommandBuf
+                0x0605b17c                MaxWorks
+                0x0605b17e                WorkSize
+                0x0605b174                PCM_WkSize
+                0x0605b16c                CLOfstBuf
+                0x0605b280                RemainWork
+                0x0605b170                PCM_Work
+                0x0605b140                MasterStack
+                0x0605b144                SlaveStack
+                0x0605b148                MaxVertices
+                0x0605b178                MaxEvents
+                0x0605b158                Zbuffer
+                0x0605b160                SpriteBufSize
+                0x0605d680                WorkBuf
+                0x0605b154                TransList
+                0x0605b164                Pbuffer
+                0x0605b150                SortListSize
+                0x0605b17a                EventSize
+                0x0605b680                EventBuf
+ SLPROG         0x06061680      0xfc8 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglH00.o)
+                0x0606171c                slSetPortData1
+                0x0606170c                slGetPortData1
+                0x06061efa                slSetPortMode1
+                0x06062134                Smpc_Status
+                0x060616d2                slSetPortDir2
+                0x06061d18                slSmpcCashSend
+                0x06061738                slGetPortSelect1
+                0x06061b1e                slIntBackCancel
+                0x060617d0                slSetPortExt1
+                0x06061ee0                slGetPortMode1
+                0x06061dd4                slSmpcCashBlow
+                0x060620c4                slRequestCommand
+                0x06062164                SmpcStatusBuf
+                0x06061726                slSetPortData2
+                0x06061a86                slSetResultBuffer
+                0x060617bc                slGetPortExt1
+                0x06061800                slSetPortExt2
+                0x060616a0                slGetPortDir2
+                0x060617c6                slGetPortExt2
+                0x06061b52                slClearReset
+                0x06061b48                slCheckReset
+                0x060616a8                slSetPortDir1
+                0x06061780                slSetPortSelect2
+                0x0606174c                slSetPortSelect1
+                0x06061eec                slGetPortMode2
+                0x06061742                slGetPortSelect2
+                0x06061698                slGetPortDir1
+                0x06061714                slGetPortData2
+                0x06061eba                slSetOptimize
+                0x06061eb0                slGetOptimize
+                0x06061974                slSmpcDirectAccess
+                0x06062142                Per_Connect1
+                0x060619f4                slInitPeripheral
+                0x06061b12                slCheckIntBackSet
+                0x06062143                Per_Connect2
+                0x0606213c                Smpc_Peripheral
+                0x06061f38                slSetPortMode2
+                0x06062138                Smpc_Result
+ *fill*         0x06062648        0x8 00
+ SLPROG         0x06062650       0x18 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglG01.o)
+                0x06062650                slSndVolume
+ *fill*         0x06062668        0x8 00
+ SLPROG         0x06062670      0x1d0 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglG00.o)
+                0x06062670                slInitSound
+                0x0606278c                slSndFlush
+                0x06062774                slWaitSound
+ SLPROG         0x06062840       0x4c ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglG19.o)
+                0x06062840                slCDDAOn
+ *fill*         0x0606288c        0x4 00
+ SLPROG         0x06062890       0x18 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglG25.o)
+                0x06062890                slPCMStat
+ *fill*         0x060628a8        0x8 00
+ SLPROG         0x060628b0      0x1e0 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglG21.o)
+                0x060628b8                slPCMOn
+                0x060629d6                slSndPCMNum
+ SLPROG         0x06062a90       0x48 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglG22.o)
+                0x06062a90                slPCMOff
+ *fill*         0x06062ad8        0x8 00
+ SLPROG         0x06062ae0       0x84 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglD00.o)
+                0x06062ae0                slDMACopy
+                0x06062ae0                slCpuDMACopy
+                0x06062b3a                slCashPurge
+                0x06062b3a                CSH_AllClr
+ *fill*         0x06062b64        0xc 00
+ SLPROG         0x06062b70       0x18 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglA15.o)
+                0x06062b70                slSlaveFunc
+ *fill*         0x06062b88        0x8 00
+ SLPROG         0x06062b90      0x3a4 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglI01.o)
+                0x06062d7a                RetPCMBuf
+                0x06062eb4                Sound_Buf
+                0x06062b90                slInitSynch
+                0x06062ca0                slRandom
+                0x06062e14                PCM_Buf
+                0x06062baa                slSynch
+                0x06062cbe                PCM_EndCheck
+ *fill*         0x06062f34        0xc 00
+ SLPROG         0x06062f40       0x4e ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglF00.o)
+                0x06062f5a                slLocate
+                0x06062f50                slCurColor
+                0x06062f8c                CurrentScreen
+                0x06062f40                slCurScrn
+ *fill*         0x06062f8e        0x2 00
+ SLPROG         0x06062f90       0x20 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglB001.o)
+                0x06062f90                slTVOn
+                0x06062f9a                slTVOff
+ SLPROG         0x06062fb0        0xc ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglB063.o)
+                0x06062fb0                slPriority
+ *fill*         0x06062fbc        0x4 00
+ SLPROG         0x06062fc0        0xc ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglB016.o)
+                0x06062fc0                slBack1ColSet
+ *fill*         0x06062fcc        0x4 00
+ SLPROG         0x06062fd0      0x114 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglB200.o)
+                0x06062fdc                slCharNbg0
+                0x06063022                slPageRbg0
+                0x06063038                slPageNbg1
+                0x06062fe8                slCharNbg1
+                0x06063054                slPageNbg0
+                0x06063040                slPageNbg2
+                0x06063048                slPageNbg3
+                0x06062ff4                slCharNbg2
+                0x0606300a                slCharNbg3
+                0x06062fd0                slCharRbg0
+ *fill*         0x060630e4        0xc 00
+ SLPROG         0x060630f0        0xc ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglB056.o)
+                0x060630f0                slPlaneNbg1
+ *fill*         0x060630fc        0x4 00
+ SLPROG         0x06063100       0xb4 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglB032.o)
+                0x06063100                slMapNbg1
+ *fill*         0x060631b4        0xc 00
+ SLPROG         0x060631c0       0x24 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglB011.o)
+                0x060631c0                slBitMapNbg1
+ *fill*         0x060631e4        0xc 00
+ SLPROG         0x060631f0        0xc ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglB053.o)
+                0x060631f0                slZoomNbg1
+ *fill*         0x060631fc        0x4 00
+ SLPROG         0x06063200      0x40c ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglB015.o)
+                0x06063200                slScrAutoDisp
+ *fill*         0x0606360c        0x4 00
+ SLPROG         0x06063610       0x1c ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglF05.o)
+                0x06063610                slPrint
+ *fill*         0x0606362c        0x4 00
+ SLPROG         0x06063630       0xa8 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglH01.o)
+                0x06063690                slSetSoundOutput
+                0x06063668                slSetSoundEffect
+                0x0606365c                slGetSoundEffect
+                0x06063684                slGetSoundOutput
+                0x060636ac                slGetHelpWindow
+                0x06063630                slGetLanguage
+                0x0606363a                slSetLanguage
+                0x060636b8                slSetHelpWindow
+ *fill*         0x060636d8        0x8 00
+ SLPROG         0x060636e0      0x162 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglC07.o)
+                0x060636e6                slPutSprite
+ *fill*         0x06063842        0xe 00
+ SLPROG         0x06063850       0xfa ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglC06.o)
+                0x06063850                slDispSprite
+ *fill*         0x0606394a        0x6 00
+ SLPROG         0x06063950       0x84 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglD16.o)
+                0x06063998                DMA_SCU_PRM0
+                0x06063950                DMA_ScuSetPrm
+ *fill*         0x060639d4        0xc 00
+ SLPROG         0x060639e0       0x88 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglD17.o)
+                0x060639e0                DMA_ScuStart
+ *fill*         0x06063a68        0x8 00
+ SLPROG         0x06063a70       0x20 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglD15.o)
+                0x06063a70                CSH_Purge
+ SLPROG         0x06063a90       0x34 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglD18.o)
+                0x06063a90                DMA_ScuGetStatus
+ *fill*         0x06063ac4        0xc 00
+ SLPROG         0x06063ad0       0xa0 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglD01.o)
+                0x06063ad0                slDMAXCopy
+ SLPROG         0x06063b70        0xc ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglD03.o)
+                0x06063b70                slDMAStatus
+ *fill*         0x06063b7c        0x4 00
+ SLPROG         0x06063b80      0x470 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglH02.o)
+                0x06063f70                smpc_pfr_tbl
+                0x06063fb0                smpc_ptf_tbl
+ SLPROG         0x06063ff0       0x60 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglH04.o)
+                0x0606401a                slComPrmSetTime
+                0x06063ff0                slComPrmIntBack
+                0x06064004                slComPrmSetMemory
+ SLPROG         0x06064050       0x10 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglD02.o)
+                0x06064050                slDMAWait
+ SLPROG         0x06064060       0x20 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglA00.o)
+                0x06064074                get_imask
+                0x06064060                set_imask
+                0x06064060                _builtin_set_imask
+                0x06064074                _builtin_get_imask
+ SLPROG         0x06064080       0x74 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglJ00.o)
+                0x06064080                InitSlaveSH
+                0x060640e8                SlaveCommand
+ *fill*         0x060640f4        0xc 00
+ SLPROG         0x06064100      0x42c ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglA20.o)
+                0x06064100                slInitMatrix
+                0x0606411e                slUnitMatrix
+                0x0606410a                slPushUnitMatrix
+ *fill*         0x0606452c        0x4 00
+ SLPROG         0x06064530      0xbd0 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglB000.o)
+                0x06064530                slInitScroll
+                0x06064790                TVSizeTbl
+                0x06064680                setASC_4to8
+                0x06064810                TVModeTbl
+                0x06064650                setASC_1to8
+                0x060649e8                SGL_ASCII_CG
+ SLPROG         0x06065100      0x3d0 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglJ01.o)
+                0x06065100                SlaveControl
+                0x060654bc                ErasePolygonData
+ SLPROG         0x060654d0      0x75c ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglI00.o)
+                0x060657c0                slInitInterrupt
+ *fill*         0x06065c2c        0x4 00
+ SLPROG         0x06065c30      0x134 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglC00.o)
+                0x06065c30                slInitSprite
+ *fill*         0x06065d64        0xc 00
+ SLPROG         0x06065d70       0xd4 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglB035.o)
+                0x06065d70                sl1MapRA
+                0x06065e02                rbank_set
+ *fill*         0x06065e44        0xc 00
+ SLPROG         0x06065e50     0x411e ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglA01.o)
+                0x06065f2c                sin_cos_index_tbl
+                0x06065e50                slSin
+                0x06065f6c                sin_tbl
+                0x06065e98                GetSinCos
+                0x06065e74                slCos
+ *fill*         0x06069f6e        0x2 00
+ SLPROG         0x06069f70       0x40 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglC20.o)
+                0x06069f70                SpriteEntry
+ SLPROG         0x06069fb0      0x140 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglJ03.o)
+                0x06069fb0                sbMakeDMATable
+ SLPROG         0x0606a0f0     0x12b8 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglJ02.o)
+                0x0606b324                stvtc_1
+                0x0606b05c                stvtc_4
+                0x0606b01c                SetPolygon
+                0x0606b114                stvtc_3
+                0x0606b34c                stvtc_0
+                0x0606b024                SetPosition
+                0x0606a2d8                sbCalcPolygon
+                0x0606b010                SetTexture
+                0x0606a0f0                sbMakePolygon
+                0x0606b338                stvtc_2
+ *fill*         0x0606b3a8        0x8 00
+ SLPROG         0x0606b3b0      0x470 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglJ04.o)
+                0x0606b474                sbMakeRotSprite
+                0x0606b40e                sbMakeSprite
+ SLPROG         0x0606b820       0x3c ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglJ05.o)
+                0x0606b820                sbSortEntry
+ *fill*         0x0606b85c        0x4 00
+ SLPROG         0x0606b860       0xf0 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglH03.o)
+                0x0606b8c4                slSmpcIntBack
+ SLPROG         0x0606b950       0x6a ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglM01.o)
+                0x0606b97c                slSetDepthTbl
+                0x0606b9ac                DepthWorkArea
+                0x0606b950                slSetDepthLimit
+                0x0606b9ba                __slprog_end = .
 
-.tors           0x0606b960        0x0
-                0x0606b960                ___ctors = .
+.tors           0x0606b9c0        0x0
+                0x0606b9c0                ___ctors = .
  *(.ctors)
-                0x0606b960                ___ctors_end = .
-                0x0606b960                ___dtors = .
+                0x0606b9c0                ___ctors_end = .
+                0x0606b9c0                ___dtors = .
  *(.dtors)
-                0x0606b960                ___dtors_end = .
+                0x0606b9c0                ___dtors_end = .
 
-.data           0x0606b960     0x7670
+.data           0x0606b9c0     0x7670
  *(.data)
- .data          0x0606b960       0x10 main.o
- .data          0x0606b970     0x6830 ../../jo_engine/audio.o
-                0x0606b970                sddrvstsk
- .data          0x060721a0       0x10 ../../jo_engine/fs.o
- .data          0x060721b0      0x5b0 ../../jo_engine/math.o
-                0x060721b0                JoCosLookupTable
- .data          0x06072760       0x30 ../../jo_engine/sprites.o
-                0x06072770                __jo_sprite_attributes
-                0x06072764                __jo_sprite_pos
-                0x06072760                __jo_gouraud_shading_runtime_index
- .data          0x06072790       0x10 ../../jo_engine/sprite_animator.o
- .data          0x060727a0       0x80 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglIc0.o)
-                0x060727a0                IntPrioMask
- .data          0x06072820      0x380 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(impure.o)
-                0x06072b9c                _impure_ptr
- .data          0x06072ba0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(locale.o)
-                0x06072bac                __mb_cur_max
-                0x06072ba0                __lc_ctype
- .data          0x06072bc0      0x410 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(mallocr.o)
-                0x06072bc8                __malloc_av_
-                0x06072bc4                __malloc_trim_threshold
-                0x06072bc0                __malloc_sbrk_base
-                0x06072fd0                __edata = .
+ .data          0x0606b9c0       0x10 main.o
+ .data          0x0606b9d0     0x6830 ../../jo_engine/audio.o
+                0x0606b9d0                sddrvstsk
+ .data          0x06072200       0x10 ../../jo_engine/fs.o
+ .data          0x06072210      0x5b0 ../../jo_engine/math.o
+                0x06072210                JoCosLookupTable
+ .data          0x060727c0       0x30 ../../jo_engine/sprites.o
+                0x060727d0                __jo_sprite_attributes
+                0x060727c4                __jo_sprite_pos
+                0x060727c0                __jo_gouraud_shading_runtime_index
+ .data          0x060727f0       0x10 ../../jo_engine/sprite_animator.o
+ .data          0x06072800       0x80 ../../Compiler/SGL_302j/LIB_COFF/LIBSGL.A(sglIc0.o)
+                0x06072800                IntPrioMask
+ .data          0x06072880      0x380 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(impure.o)
+                0x06072bfc                _impure_ptr
+ .data          0x06072c00       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(locale.o)
+                0x06072c0c                __mb_cur_max
+                0x06072c00                __lc_ctype
+ .data          0x06072c20      0x410 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(mallocr.o)
+                0x06072c28                __malloc_av_
+                0x06072c24                __malloc_trim_threshold
+                0x06072c20                __malloc_sbrk_base
+                0x06073030                __edata = .
 
-.bss            0x06072fd0    0x43d84
-                0x06072fd0                __bstart = .
+.bss            0x06073030    0x43d94
+                0x06073030                __bstart = .
  *(.bss)
- .bss           0x06072fd0       0x70 main.o
- .bss           0x06073040     0x2590 ../../jo_engine/fs.o
- .bss           0x060755d0    0x40030 ../../jo_engine/core.o
-                0x060755d0                __jo_slave_done_flag
- .bss           0x060b5600       0x80 ../../jo_engine/malloc.o
- .bss           0x060b5680       0x10 ../../jo_engine/sprites.o
- .bss           0x060b5690       0x50 ../../jo_engine/map.o
- .bss           0x060b56e0       0x10 ../../jo_engine/sprite_animator.o
- .bss           0x060b56f0       0x10 ../../jo_engine/time.o
- .bss           0x060b5700        0x4 ../../Compiler/SGL_302j/LIB_COFF/SEGA_SYS.A(sys_exit.o)
- *fill*         0x060b5704        0xc 00
- .bss           0x060b5710        0x2 ../../Compiler/SGL_302j/LIB_COFF/LIBCD.A(CDC_REG.O)
- *fill*         0x060b5712        0xe 00
- .bss           0x060b5720        0xc ../../Compiler/SGL_302j/LIB_COFF/LIBCD.A(CDC_SUB.O)
- *fill*         0x060b572c        0x4 00
- .bss           0x060b5730        0xc ../../Compiler/SGL_302j/LIB_COFF/LIBCD.A(GFS_TRN.O)
- *fill*         0x060b573c        0x4 00
- .bss           0x060b5740       0x10 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(__main.o)
- .bss           0x060b5750       0x10 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(atexit.o)
- .bss           0x060b5760       0x10 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(locale.o)
-                0x060b5764                __mlocale_changed
-                0x060b5760                _PathLocale
-                0x060b5768                __nlocale_changed
- .bss           0x060b5770       0x40 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(mallocr.o)
-                0x060b57a0                __malloc_top_pad
-                0x060b5770                __malloc_current_mallinfo
-                0x060b579c                __malloc_max_sbrked_mem
-                0x060b5798                __malloc_max_total_mem
- .bss           0x060b57b0       0x10 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(syscalls.o)
+ .bss           0x06073030       0x80 main.o
+ .bss           0x060730b0     0x2590 ../../jo_engine/fs.o
+ .bss           0x06075640    0x40030 ../../jo_engine/core.o
+                0x06075640                __jo_slave_done_flag
+ .bss           0x060b5670       0x80 ../../jo_engine/malloc.o
+ .bss           0x060b56f0       0x10 ../../jo_engine/sprites.o
+ .bss           0x060b5700       0x50 ../../jo_engine/map.o
+ .bss           0x060b5750       0x10 ../../jo_engine/sprite_animator.o
+ .bss           0x060b5760       0x10 ../../jo_engine/time.o
+ .bss           0x060b5770        0x4 ../../Compiler/SGL_302j/LIB_COFF/SEGA_SYS.A(sys_exit.o)
+ *fill*         0x060b5774        0xc 00
+ .bss           0x060b5780        0x2 ../../Compiler/SGL_302j/LIB_COFF/LIBCD.A(CDC_REG.O)
+ *fill*         0x060b5782        0xe 00
+ .bss           0x060b5790        0xc ../../Compiler/SGL_302j/LIB_COFF/LIBCD.A(CDC_SUB.O)
+ *fill*         0x060b579c        0x4 00
+ .bss           0x060b57a0        0xc ../../Compiler/SGL_302j/LIB_COFF/LIBCD.A(GFS_TRN.O)
+ *fill*         0x060b57ac        0x4 00
+ .bss           0x060b57b0       0x10 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(__main.o)
+ .bss           0x060b57c0       0x10 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(atexit.o)
+ .bss           0x060b57d0       0x10 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(locale.o)
+                0x060b57d4                __mlocale_changed
+                0x060b57d0                _PathLocale
+                0x060b57d8                __nlocale_changed
+ .bss           0x060b57e0       0x40 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(mallocr.o)
+                0x060b5810                __malloc_top_pad
+                0x060b57e0                __malloc_current_mallinfo
+                0x060b580c                __malloc_max_sbrked_mem
+                0x060b5808                __malloc_max_total_mem
+ .bss           0x060b5820       0x10 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(syscalls.o)
  *(COMMON)
- COMMON         0x060b57c0        0x4 ../../jo_engine/fs.o
-                0x060b57c0                __jo_fs_background_job_count
- *fill*         0x060b57c4        0xc 00
- COMMON         0x060b57d0       0x10 ../../jo_engine/storyboard.o
-                0x060b57d0                __storyboards
- COMMON         0x060b57e0       0x40 ../../jo_engine/core.o
-                0x060b57e0                __jo_last_error
- COMMON         0x060b5820       0x40 ../../jo_engine/tools.o
-                0x060b5820                __jo_sprintf_buf
- COMMON         0x060b5860     0x13f8 ../../jo_engine/sprites.o
-                0x060b5860                __jo_sprite_def
-                0x060b6060                __jo_hash_table
-                0x060b6460                __jo_sprite_pic
- *fill*         0x060b6c58        0x8 00
- COMMON         0x060b6c60       0xc0 ../../jo_engine/sprite_animator.o
-                0x060b6c60                __jo_sprite_anim_tab
- COMMON         0x060b6d20        0xc ../../Compiler/SGL_302j/LIB_COFF/LIBCD.A(GFS.O)
-                0x060b6d20                GFMC_base
-                0x060b6d24                gfs_mng_ptr
-                0x060b6d28                gfs_use_scudma
- *fill*         0x060b6d2c        0x4 00
- COMMON         0x060b6d30        0x8 ../../Compiler/SGL_302j/LIB_COFF/LIBCD.A(GFS_CDF.O)
-                0x060b6d30                gfcf_fad
-                0x060b6d34                gfcf_stat
- *fill*         0x060b6d38        0x8 00
- COMMON         0x060b6d40        0xc ../../Compiler/SGL_302j/LIB_COFF/LIBCD.A(GFS_CDC.O)
-                0x060b6d40                gfcd_fatal_err
-                0x060b6d44                gfcd_work
-                0x060b6d48                gfcd_playflag
- *fill*         0x060b6d4c        0x4 00
- COMMON         0x060b6d50        0x4 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(syscalls.o)
-                0x060b6d50                errno
-                0x060b6d54                __bend = .
-                0x060b6d54                _end = .
+ COMMON         0x060b5830        0x4 ../../jo_engine/fs.o
+                0x060b5830                __jo_fs_background_job_count
+ *fill*         0x060b5834        0xc 00
+ COMMON         0x060b5840       0x10 ../../jo_engine/storyboard.o
+                0x060b5840                __storyboards
+ COMMON         0x060b5850       0x40 ../../jo_engine/core.o
+                0x060b5850                __jo_last_error
+ COMMON         0x060b5890       0x40 ../../jo_engine/tools.o
+                0x060b5890                __jo_sprintf_buf
+ COMMON         0x060b58d0     0x13f8 ../../jo_engine/sprites.o
+                0x060b58d0                __jo_sprite_def
+                0x060b60d0                __jo_hash_table
+                0x060b64d0                __jo_sprite_pic
+ *fill*         0x060b6cc8        0x8 00
+ COMMON         0x060b6cd0       0xc0 ../../jo_engine/sprite_animator.o
+                0x060b6cd0                __jo_sprite_anim_tab
+ COMMON         0x060b6d90        0xc ../../Compiler/SGL_302j/LIB_COFF/LIBCD.A(GFS.O)
+                0x060b6d90                GFMC_base
+                0x060b6d94                gfs_mng_ptr
+                0x060b6d98                gfs_use_scudma
+ *fill*         0x060b6d9c        0x4 00
+ COMMON         0x060b6da0        0x8 ../../Compiler/SGL_302j/LIB_COFF/LIBCD.A(GFS_CDF.O)
+                0x060b6da0                gfcf_fad
+                0x060b6da4                gfcf_stat
+ *fill*         0x060b6da8        0x8 00
+ COMMON         0x060b6db0        0xc ../../Compiler/SGL_302j/LIB_COFF/LIBCD.A(GFS_CDC.O)
+                0x060b6db0                gfcd_fatal_err
+                0x060b6db4                gfcd_work
+                0x060b6db8                gfcd_playflag
+ *fill*         0x060b6dbc        0x4 00
+ COMMON         0x060b6dc0        0x4 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(syscalls.o)
+                0x060b6dc0                errno
+                0x060b6dc4                __bend = .
+                0x060b6dc4                _end = .
 LOAD ../../Compiler/SGL_302j/LIB_COFF/SGLAREA.O
 LOAD main.o
 LOAD ../../jo_engine/tga.o
@@ -1498,81 +1499,81 @@ LOAD m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUS
 LOAD m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a
 OUTPUT(sl_coff.coff coff-sh)
 
-.comment        0x060b6d60      0x9a0
- .comment       0x060b6d60       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_si_to_sf.o)
- .comment       0x060b6d80       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_mul_sf.o)
- .comment       0x060b6da0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_sf_to_si.o)
- .comment       0x060b6dc0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(__main.o)
- .comment       0x060b6de0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_le_sf.o)
- .comment       0x060b6e00       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_ge_sf.o)
- .comment       0x060b6e20       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_gt_sf.o)
- .comment       0x060b6e40       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_div_sf.o)
- .comment       0x060b6e60       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_lt_sf.o)
- .comment       0x060b6e80       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_addsub_sf.o)
- .comment       0x060b6ea0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_sf_to_df.o)
- .comment       0x060b6ec0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_df_to_sf.o)
- .comment       0x060b6ee0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_addsub_df.o)
- .comment       0x060b6f00       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_si_to_df.o)
- .comment       0x060b6f20       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_mul_df.o)
- .comment       0x060b6f40       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_div_df.o)
- .comment       0x060b6f60       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_df_to_si.o)
- .comment       0x060b6f80       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_pack_sf.o)
- .comment       0x060b6fa0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_unpack_sf.o)
- .comment       0x060b6fc0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_muldi3.o)
- .comment       0x060b6fe0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_thenan_sf.o)
- .comment       0x060b7000       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_fpcmp_parts_sf.o)
- .comment       0x060b7020       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_make_df.o)
- .comment       0x060b7040       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_unpack_df.o)
- .comment       0x060b7060       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_make_sf.o)
- .comment       0x060b7080       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_thenan_df.o)
- .comment       0x060b70a0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_pack_df.o)
- .comment       0x060b70c0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(sprintf.o)
- .comment       0x060b70e0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(memcmp.o)
- .comment       0x060b7100       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(strncmp.o)
- .comment       0x060b7120       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(strncpy.o)
- .comment       0x060b7140       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(atexit.o)
- .comment       0x060b7160       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(vfprintf.o)
- .comment       0x060b7180       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(impure.o)
- .comment       0x060b71a0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(malloc.o)
- .comment       0x060b71c0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(fvwrite.o)
- .comment       0x060b71e0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(locale.o)
- .comment       0x060b7200       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(freer.o)
- .comment       0x060b7220       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(findfp.o)
- .comment       0x060b7240       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(fflush.o)
- .comment       0x060b7260       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(wsetup.o)
- .comment       0x060b7280       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(wcrtomb.o)
- .comment       0x060b72a0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(s_isinf.o)
- .comment       0x060b72c0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(memchr.o)
- .comment       0x060b72e0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(mallocr.o)
- .comment       0x060b7300       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(wcsrtombs.o)
- .comment       0x060b7320       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(s_isnan.o)
- .comment       0x060b7340       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(dtoa.o)
- .comment       0x060b7360       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(memmove.o)
- .comment       0x060b7380       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(reallocr.o)
- .comment       0x060b73a0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(mlock.o)
- .comment       0x060b73c0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(sbrkr.o)
- .comment       0x060b73e0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(stdio.o)
- .comment       0x060b7400       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(fclose.o)
- .comment       0x060b7420       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(fwalk.o)
- .comment       0x060b7440       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(makebuf.o)
- .comment       0x060b7460       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(wctomb_r.o)
- .comment       0x060b7480       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(mprec.o)
- .comment       0x060b74a0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(syscalls.o)
- .comment       0x060b74c0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(readr.o)
- .comment       0x060b74e0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(writer.o)
- .comment       0x060b7500       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(lseekr.o)
- .comment       0x060b7520       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(closer.o)
- .comment       0x060b7540       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(fstatr.o)
- .comment       0x060b7560       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(callocr.o)
- .comment       0x060b7580       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(abort.o)
- .comment       0x060b75a0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(signal.o)
- .comment       0x060b75c0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(signalr.o)
- .comment       0x060b75e0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_eq_df.o)
- .comment       0x060b7600       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_ne_df.o)
- .comment       0x060b7620       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_lt_df.o)
- .comment       0x060b7640       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_udivdi3.o)
- .comment       0x060b7660       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_umoddi3.o)
- .comment       0x060b7680       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_gt_df.o)
- .comment       0x060b76a0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_ge_df.o)
- .comment       0x060b76c0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_fpcmp_parts_df.o)
- .comment       0x060b76e0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_clz.o)
+.comment        0x060b6dd0      0x9a0
+ .comment       0x060b6dd0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_si_to_sf.o)
+ .comment       0x060b6df0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_mul_sf.o)
+ .comment       0x060b6e10       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_sf_to_si.o)
+ .comment       0x060b6e30       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(__main.o)
+ .comment       0x060b6e50       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_le_sf.o)
+ .comment       0x060b6e70       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_ge_sf.o)
+ .comment       0x060b6e90       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_gt_sf.o)
+ .comment       0x060b6eb0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_div_sf.o)
+ .comment       0x060b6ed0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_lt_sf.o)
+ .comment       0x060b6ef0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_addsub_sf.o)
+ .comment       0x060b6f10       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_sf_to_df.o)
+ .comment       0x060b6f30       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_df_to_sf.o)
+ .comment       0x060b6f50       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_addsub_df.o)
+ .comment       0x060b6f70       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_si_to_df.o)
+ .comment       0x060b6f90       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_mul_df.o)
+ .comment       0x060b6fb0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_div_df.o)
+ .comment       0x060b6fd0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_df_to_si.o)
+ .comment       0x060b6ff0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_pack_sf.o)
+ .comment       0x060b7010       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_unpack_sf.o)
+ .comment       0x060b7030       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_muldi3.o)
+ .comment       0x060b7050       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_thenan_sf.o)
+ .comment       0x060b7070       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_fpcmp_parts_sf.o)
+ .comment       0x060b7090       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_make_df.o)
+ .comment       0x060b70b0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_unpack_df.o)
+ .comment       0x060b70d0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_make_sf.o)
+ .comment       0x060b70f0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_thenan_df.o)
+ .comment       0x060b7110       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_pack_df.o)
+ .comment       0x060b7130       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(sprintf.o)
+ .comment       0x060b7150       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(memcmp.o)
+ .comment       0x060b7170       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(strncmp.o)
+ .comment       0x060b7190       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(strncpy.o)
+ .comment       0x060b71b0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(atexit.o)
+ .comment       0x060b71d0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(vfprintf.o)
+ .comment       0x060b71f0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(impure.o)
+ .comment       0x060b7210       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(malloc.o)
+ .comment       0x060b7230       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(fvwrite.o)
+ .comment       0x060b7250       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(locale.o)
+ .comment       0x060b7270       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(freer.o)
+ .comment       0x060b7290       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(findfp.o)
+ .comment       0x060b72b0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(fflush.o)
+ .comment       0x060b72d0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(wsetup.o)
+ .comment       0x060b72f0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(wcrtomb.o)
+ .comment       0x060b7310       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(s_isinf.o)
+ .comment       0x060b7330       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(memchr.o)
+ .comment       0x060b7350       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(mallocr.o)
+ .comment       0x060b7370       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(wcsrtombs.o)
+ .comment       0x060b7390       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(s_isnan.o)
+ .comment       0x060b73b0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(dtoa.o)
+ .comment       0x060b73d0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(memmove.o)
+ .comment       0x060b73f0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(reallocr.o)
+ .comment       0x060b7410       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(mlock.o)
+ .comment       0x060b7430       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(sbrkr.o)
+ .comment       0x060b7450       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(stdio.o)
+ .comment       0x060b7470       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(fclose.o)
+ .comment       0x060b7490       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(fwalk.o)
+ .comment       0x060b74b0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(makebuf.o)
+ .comment       0x060b74d0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(wctomb_r.o)
+ .comment       0x060b74f0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(mprec.o)
+ .comment       0x060b7510       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(syscalls.o)
+ .comment       0x060b7530       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(readr.o)
+ .comment       0x060b7550       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(writer.o)
+ .comment       0x060b7570       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(lseekr.o)
+ .comment       0x060b7590       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(closer.o)
+ .comment       0x060b75b0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(fstatr.o)
+ .comment       0x060b75d0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(callocr.o)
+ .comment       0x060b75f0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(abort.o)
+ .comment       0x060b7610       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(signal.o)
+ .comment       0x060b7630       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601/../../../../sh-coff/lib\libc.a(signalr.o)
+ .comment       0x060b7650       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_eq_df.o)
+ .comment       0x060b7670       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_ne_df.o)
+ .comment       0x060b7690       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_lt_df.o)
+ .comment       0x060b76b0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_udivdi3.o)
+ .comment       0x060b76d0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_umoddi3.o)
+ .comment       0x060b76f0       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_gt_df.o)
+ .comment       0x060b7710       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_ge_df.o)
+ .comment       0x060b7730       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_fpcmp_parts_df.o)
+ .comment       0x060b7750       0x20 m:/joengine-master/compiler/sh_coff/sh-coff/bin/../lib/gcc/sh-coff/4.0-GNUSH_v0601\libgcc.a(_clz.o)
